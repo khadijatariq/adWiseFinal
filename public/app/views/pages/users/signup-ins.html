@@ -5,34 +5,39 @@
     <div class="row">
         <div class="col-sm-offset-1 col-sm-2"></div>
         <div class="col-sm-6">
-            <form class="form">
+            <form class="form" ng-submit="register.regIns(regData);">
                 <div class="row">
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" name="firstname" required autocomplete="off" class="form-control input-lg" placeholder="First Name"/></div>
+                        <input type="text" name="firstname" required autocomplete="off" class="form-control input-lg" placeholder="First Name" ng-model="register.regData.fname"/></div>
                     <div class="col-xs-6 col-md-6">
-                        <input type="text" name="lastname" required autocomplete="off" class="form-control input-lg" placeholder="Last Name"/></div>
+                        <input type="text" name="lastname" required autocomplete="off" class="form-control input-lg" placeholder="Last Name" ng-model="register.regData.lname"/></div>
                 </div>
                 <label>Gender : </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="M" id=male/>Male
+                    <input type="radio" name="gender" id=male/>Male
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender" value="F" id=female/>Female
+                    <input type="radio" name="gender" id=female/>Female
                 </label>
                 <br/>
-                <input type="text" name="email" value="" required autocomplete="off" class="form-control input-lg" placeholder="Your Campus Email"  />
-                <div class="dropdown">
-                    <input type="button" name="field" value="" required autocomplete="off" class="dropdow-toggle" data-toggle="dropdown" placeholder="Field of Research" />
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Networks</a></li>
-                        <li><a href="#">Human Computer Interaction</a></li>
-                    </ul>
-                </div>
-                <input type="number" name="roomno" value="" required autocomplete="off" class="form-control input-lg" placeholder="Your Room No." />
-                <input type="number" name="ext" value="" required autocomplete="off" class="form-control input-lg" placeholder="Extension" />
-                <input type="password" name="password" value="" required autocomplete="off" class="form-control input-lg" placeholder="Password"  />
-                <input type="password" name="confirm_password" value="" required autocomplete="off" class="form-control input-lg" placeholder="Confirm Password"  />
+                <input type="text" name="email" required autocomplete="off" class="form-control input-lg" placeholder="Your Campus Email" ng-model="register.regData.email"/>
+                <input type="text" name="field" class="form-control input-lg" placeholder="Field of Interest (If any)" ng-model="register.regData.field"/>
+                <input type="number" name="roomno" required autocomplete="off" class="form-control input-lg" placeholder="Your Room No." ng-model="register.regData.room"/>
+                <input type="number" name="ext" required autocomplete="off" class="form-control input-lg" placeholder="Extension" ng-model="register.regData.extension"/>
+                <input type="password" name="password" required autocomplete="off" class="form-control input-lg" placeholder="Password" ng-model="register.regData.password"/>
+                <input type="password" name="confirm_password" required autocomplete="off" class="form-control input-lg" placeholder="Confirm Password" ng-model="register.regData.passcheck"/>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Create my account</button>
+                <br/>
+                <div class="jumbotron text-center" ng-show="register.loading">
+                    <span class="glyphicon glyphicon-repeat spinner"></span>
+                    <p>Loading....</p>
+                </div>
+                <div class="row show-hide-message" ng-show="register.successMsg">
+                    <div class="alert alert-success">{{register.successMsg}}</div>
+                </div>
+                <div class="row show-hide-message" ng-show="register.errorMsg">
+                    <div class="alert alert-danger">{{register.errorMsg}}</div>
+                </div>
                 <br/>
                 <br/>
                 <br/>

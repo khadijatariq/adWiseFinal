@@ -4,11 +4,12 @@ angular.module('userControllers', [])
 	
 	var app = this;
 
-	app.stUser = function(regData) {
+	app.regStu = function(regData) {
 		app.errorMsg = false;
 		if (app.regData.passcheck === app.regData.password){
 			app.loading = true;
-			$http.post('/api/regStu', app.regData).then(function(data) {
+			app.regData.state = "student";
+			$http.post('/api/register', app.regData).then(function(data) {
 				app.loading = false;
 				if (data.data.success) {
 					app.successMsg = data.data.message;
@@ -24,11 +25,12 @@ angular.module('userControllers', [])
 		}
 	};
 
-	app.insUser = function(regData) {
+	app.regIns = function(regData) {
 		app.errorMsg = false;
 		if (app.regData.passcheck === app.regData.password){
 			app.loading = true;
-			$http.post('/api/regIns', app.regData).then(function(data) {
+			app.regData.state = "instructor";
+			$http.post('/api/register', app.regData).then(function(data) {
 				app.loading = false;
 				if (data.data.success) {
 					app.successMsg = data.data.message;

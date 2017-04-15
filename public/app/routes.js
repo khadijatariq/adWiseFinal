@@ -19,9 +19,9 @@ angular.module('appRoutes', ['ngRoute'])
 	})
 
 	.when('/signup-as-instructor', {
-		templateUrl: 'app/views/pages/users/signup-ins.html'
-		//controller: 'regCtrl',
-		//controllerAs: 'register'
+		templateUrl: 'app/views/pages/users/signup-ins.html',
+		controller: 'regCtrl',
+		controllerAs: 'register'
 	})
 
 	.when('/faq', {
