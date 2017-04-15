@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <h2 class="col-sm-offset-3 col-sm-6" style="text-align:center">Student Signup</h2>
+    </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-2">
+        </div>
+        <div class="col-sm-6">
+            <form class="form" ng-submit="register.stUser(regData);">
+                <div class="row">
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="firstname" required autocomplete="off" class="form-control input-lg" placeholder="First Name" ng-model="register.regData.fname"/></div>
+                    <div class="col-xs-6 col-md-6">
+                        <input type="text" name="lastname" required autocomplete="off" class="form-control input-lg" placeholder="Last Name" ng-model="register.regData.lname"/></div>
+                </div>
+                <label>Gender : </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" id=male />Male
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="gender" id=female />Female
+                </label>
+                <br/>
+                <input type="text" name="email" required autocomplete="off" class="form-control input-lg" placeholder="Your Campus Email" ng-model="register.regData.email"/>
+                <input type="text" name="field" class="form-control input-lg" placeholder="Field of Interest (If any)" ng-model="signup.stData.field"/>
+                <input type="password" name="password" required autocomplete="off" class="form-control input-lg" placeholder="Password" ng-model="register.regData.password"/>
+                <input type="password" name="confirm_password" required autocomplete="off" class="form-control input-lg" placeholder="Confirm Password" ng-model="register.regData.passcheck"/>
+                <div class="field-wrap">
+                    <label>
+                        Upload Zambeel Report<span class="req">*</span>
+                        <a href="https://zambeel.lums.edu.pk/" style="margin-left:320px" target="_blank">Zambeel</a>
+                    </label>
+                    <br/>
+                    <input type="file"required autocomplete="off">
+                </div>
+                <br/>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Create my account</button>
+                <br/>
+                <div class="jumbotron text-center" ng-show="register.loading">
+                    <span class="glyphicon glyphicon-repeat spinner"></span>
+                    <p>Loading....</p>
+                </div>
+                <div class="row show-hide-message" ng-show="register.successMsg">
+                    <div class="alert alert-success">{{register.successMsg}}</div>
+                </div>
+                <div class="row show-hide-message" ng-show="register.errorMsg">
+                    <div class="alert alert-danger">{{register.errorMsg}}</div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
