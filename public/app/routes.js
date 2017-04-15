@@ -22,6 +22,10 @@ angular.module('appRoutes', ['ngRoute'])
 		templateUrl: 'app/views/pages/faq.html'
 	})
 
+	.when('/contact', {
+		templateUrl: 'app/views/pages/contact.html'
+	})
+
 	.otherwise({ redirectTo: '/'});
 
 	$locationProvider.html5Mode({
