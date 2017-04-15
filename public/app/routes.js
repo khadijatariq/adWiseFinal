@@ -22,6 +22,13 @@ angular.module('appRoutes', ['ngRoute'])
 		templateUrl: 'app/views/pages/users/signup-ins.html'
 		//controller: 'regCtrl',
 		//controllerAs: 'register'
+
+	.when('/faq', {
+		templateUrl: 'app/views/pages/faq.html'
+	})
+
+	.when('/contact', {
+		templateUrl: 'app/views/pages/contact.html'
 	})
 
 	.otherwise({ redirectTo: '/'});
