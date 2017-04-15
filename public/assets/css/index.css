@@ -8,39 +8,42 @@ body
 #bbox
 {
     background: rgba(0, 0, 0, 0.4);
-	min-height:560px;
-	text-align:center;
+  	min-height:560px;
+  	text-align:center;
 }
-#bbox h2
+#abox, #cbox
 {
-    color:white;
-    margin-top:130px;
-}
-#bbox a
-{
-    color:white;
-}
-#bbox p
-{
-    color:white;
-    margin-top: 45px;
+    background: rgba(0, 0, 0, 0.4);
+    text-align:left;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 #ebox
 {
-	text-align:center;
+	 text-align:center;
 }
-#ebox h2
+#ebox p, #ebox h2
 {
     color:#5b5b5b;
-    margin-top:130px;
 }
-#ebox a
+#abox h2, #abox a, #abox p, #ebox a, #bbox a, #bbox h2, #bbox p, #cbox h2, #cbox p
 {
     color:white;
 }
-#ebox p
+#cbox a
 {
-    color:#5b5b5b;
+    color:#aeea5e;
+}
+#abox h3, #cbox h3
+{
+    color:#59b5ee;
+}
+#bbox h2, #ebox h2
+{
+    margin-top:130px;
+}
+#bbox p, #ebox p
+{
     margin-top: 45px;
 }
 #map
@@ -48,29 +51,6 @@ body
     margin-top: -20px;
 }
 span.tab-space {padding-left:1.5em;}
-#abox
-{
-    background: rgba(0, 0, 0, 0.4);
-    text-align:left;
-    padding-left: 60px;
-    padding-right: 60px;
-}
-#abox h2
-{
-    color:white;
-}
-#abox h3
-{
-    color:#59b5ee;
-}
-#abox a
-{
-    color:white;
-}
-#abox p
-{
-    color:white;
-}
 .signup-btn {
   background: #79bc64;
   border-radius: 4px;
@@ -83,7 +63,6 @@ span.tab-space {padding-left:1.5em;}
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   border: solid #3b6e22  1px;
-  text-decoration: none;
 }
 .signup-btn:hover {
   background: #79bc64;
@@ -92,6 +71,5 @@ span.tab-space {padding-left:1.5em;}
   background-image: -ms-linear-gradient(top, #79bc64, #5e7056);
   background-image: -o-linear-gradient(top, #79bc64, #5e7056);
   background-image: linear-gradient(to bottom, #79bc64, #5e7056);
-  text-decoration: none;
 }
 .form .form-control { margin-bottom: 10px; }
