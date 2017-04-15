@@ -18,6 +18,12 @@ angular.module('appRoutes', ['ngRoute'])
 		controllerAs: 'register'
 	})
 
+	.when('/signup-as-instructor', {
+		templateUrl: 'app/views/pages/users/signup-ins.html'
+		//controller: 'regCtrl',
+		//controllerAs: 'register'
+	})
+
 	.otherwise({ redirectTo: '/'});
 
 	$locationProvider.html5Mode({
