@@ -18,6 +18,10 @@ angular.module('appRoutes', ['ngRoute'])
 		controllerAs: 'register'
 	})
 
+	.when('/faq', {
+		templateUrl: 'app/views/pages/faq.html'
+	})
+
 	.otherwise({ redirectTo: '/'});
 
 	$locationProvider.html5Mode({
