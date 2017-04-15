@@ -1,6 +1,6 @@
-angular.module('userControllers', [])
+angular.module('userControllers', ['userServices'])
 
-.controller('regCtrl', function($http, $location, $timeout) {
+.controller('regCtrl', function($http, $location, $timeout, User) {
 	
 	var app = this;
 
@@ -9,10 +9,10 @@ angular.module('userControllers', [])
 		if (app.regData.passcheck === app.regData.password){
 			app.loading = true;
 			app.regData.state = "student";
-			$http.post('/api/register', app.regData).then(function(data) {
+			User.create(app.regData).then(function(data) {
 				app.loading = false;
 				if (data.data.success) {
-					app.successMsg = data.data.message;
+					app.successMsg = data.data.message + " Redirecting...";
 					$timeout(function() {
 						$location.path("/");
 					}, 1000);
@@ -30,10 +30,10 @@ angular.module('userControllers', [])
 		if (app.regData.passcheck === app.regData.password){
 			app.loading = true;
 			app.regData.state = "instructor";
-			$http.post('/api/register', app.regData).then(function(data) {
+			User.create(app.regData).then(function(data) {
 				app.loading = false;
 				if (data.data.success) {
-					app.successMsg = data.data.message;
+					app.successMsg = data.data.message + " Redirecting...";
 					$timeout(function() {
 						$location.path("/");
 					}, 1000);

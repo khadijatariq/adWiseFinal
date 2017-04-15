@@ -10,7 +10,7 @@ module.exports = function(router) {
 			if (err) {
 				res.json({success: false, message: 'Account with this email already exists!'});
 			} else {
-				res.json({success: true, message: 'Data received'});
+				res.json({success: true, message: 'Data received.'});
 			}
 		});
 	});

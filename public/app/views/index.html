@@ -1,32 +1,35 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="adWise">
   <head>
     <base href="/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!--Cascade Style Sheets -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/index.css" type="text/css"/>
+    <!-- Cascade Style Sheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
 
-
+    <!-- Main Angular Files -->
     <script src="assets/js/angular.js"></script>
     <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/angular-resource.js"></script>
 
-    <!--Routing -->
+    <!-- Angular Config/Routes -->
     <script src="app/app.js"></script>
     <script src="app/routes.js"></script>
 
-    <!--Controllers -->
+    <!-- Angular Controllers -->
     <script src="app/controllers/userCtrl.js"></script>
 
-    <title>adWise | HOME</title>
+    <!-- Angular Services -->
+    <script src="app/services/userServices.js"></script>
+
+    <title ng-bind="'adWise | ' + title">adWise</title>
     <link rel="icon" href="assets/images/logo.png">
   </head>
 
-  <body ng-app="adWise">
+  <body>
     <nav id="myNavbar" class="navbar navbar-default" role="navigation">
       <div class="container">
         <div class="navbar-header">

@@ -1,1 +1,1 @@
-angular.module('adWise', ['appRoutes','userControllers'])
+angular.module('adWise', ['appRoutes','userControllers','userServices']);
