@@ -22,45 +22,26 @@
     <!-- Angular Controllers -->
     <script src="app/controllers/userCtrl.js"></script>
 
+
     <!-- Angular Services -->
     <script src="app/services/userServices.js"></script>
+
+    <!-- Helper functions -->
+    <script type="text/javascript">
+        function changeCol(sel)
+        {
+          sel.style.color = "black";              
+        }
+    </script>
 
     <title ng-bind="'adWise | ' + title">adWise</title>
     <link rel="icon" href="assets/images/logo.png">
   </head>
 
   <body>
-    <nav id="myNavbar" class="navbar navbar-default" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="/" style="padding:5px 50px"><img src="assets/images/logo.png" style="max-width:90px;" ></a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                 aria-expanded="false">Sign Up <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/signup-as-student">Sign up as student</a></li>
-                <li><a href="/signup-as-instructor">Sign up as instructor</a></li>
-              </ul>
-            </li>
-            <li><a href="login.html">Login</a></li>
-          </ul>
-          <ul class="nav navbar-nav">
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/faq">FAQ</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div ng-controller="headCtrl">
+      <div ng-include="templateUrl"></div>
+    </div>
     <div ng-view></div>
     <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
       <div class="container" id="map">

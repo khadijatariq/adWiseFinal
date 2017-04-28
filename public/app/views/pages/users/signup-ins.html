@@ -21,7 +21,17 @@
                 </label>
                 <br/>
                 <input type="text" name="email" required autocomplete="off" class="form-control input-lg" placeholder="Your Campus Email" ng-model="register.regData.email"/>
-                <input type="text" name="field" class="form-control input-lg" placeholder="Field of Interest (If any)" ng-model="register.regData.field"/>
+                <div class="form-group">
+                    <select class="form-control input-lg" id="sel1" onchange="changeCol(this)">
+                        <option value="" disabled selected hidden>Select your field</option>
+                        <option>Artificial Intelligence</option>
+                        <option>Computer Graphics</option>
+                        <option>Computer Networks</option>
+                        <option>Human Computer Interaction</option>
+                        <option>Operating Systems</option>
+                        <option>Software Engineering</option>
+                    </select>
+                </div>
                 <input type="text" name="roomno" required autocomplete="off" class="form-control input-lg" placeholder="Your Room No." ng-model="register.regData.room"/>
                 <input type="number" name="ext" required autocomplete="off" class="form-control input-lg" placeholder="Extension" ng-model="register.regData.extension"/>
                 <input type="password" name="password" required autocomplete="off" class="form-control input-lg" placeholder="Password" ng-model="register.regData.password"/>

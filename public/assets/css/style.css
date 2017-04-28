@@ -73,3 +73,9 @@ span.tab-space {padding-left:1.5em;}
   background-image: linear-gradient(to bottom, #79bc64, #5e7056);
 }
 .form .form-control { margin-bottom: 7px; }
+#sel1 {
+    color: gray;
+}
+#sel1 option {
+    color: black;
+}
