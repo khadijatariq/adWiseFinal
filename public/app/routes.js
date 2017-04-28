@@ -38,6 +38,21 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/contact.html'
 	})
 
+	.when('/login', {
+		title : 'SIGN IN',
+		templateUrl: 'app/views/pages/users/login.html'
+	})
+
+	.when('/sdashboard', {
+		title : 'DASHBOARD',
+		templateUrl: 'app/views/pages/users/student/dashboard.html'
+	})
+
+	.when('/idashboard', {
+		title : 'DASHBOARD',
+		templateUrl: 'app/views/pages/users/instructor/dashboard.html'
+	})
+
 	.otherwise({ redirectTo: '/'});
 
 	$locationProvider.html5Mode({

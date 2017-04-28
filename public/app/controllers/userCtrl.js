@@ -1,6 +1,6 @@
 angular.module('userControllers', ['userServices'])
 
-.controller('regCtrl', function($http, $location, $timeout, User) {
+.controller('regCtrl', function($location, $timeout, User) {
 	
 	var app = this;
 
@@ -58,17 +58,3 @@ angular.module('userControllers', ['userServices'])
 		}
 	};
 })
-
-.controller('headCtrl', function($scope, $location) {
-
-	$scope.$on('$locationChangeSuccess', function() {
-
-        var path = $location.path();
-        
-        if (path === '/' || path === '/about' || path === '/contact' || path === '/faq'){
-        	$scope.templateUrl = 'app/views/pages/header.html';
-        } else {
-        	$scope.templateUrl = 'app/views/pages/users/header.html';	
-        }
-    });
-});

@@ -1,6 +1,10 @@
 var schemas = require('../models/user');
+var jwt = require('jsonwebtoken');
+var secret = 'softwareengineering';
 
 module.exports = function(router) {
+
+	//User registration route
 	router.post('/register', function(req, res){
 		var user = new schemas.User();
 		user.email = req.body.email;
@@ -34,6 +38,56 @@ module.exports = function(router) {
 				}
 			}
 		});
+	});
+
+	//User login route
+	router.post('/authenticate', function(req, res){
+		schemas.User.findOne({ email : req.body.email}).select('email password state').exec(function (err, user) {
+			if (!user){
+				res.json({success : false, message : 'Account with this email does not exist.'});
+			} else if (user){
+				var valid = user.comparePassword(req.body.password);
+				if (!valid) {
+					res.json({success : false, message : 'The password you entered is incorrect.'});
+				} else {
+					var token  = null;
+					if (user.state == 'student') {
+						schemas.Student.findOne({ email : user.email}).select('email fname lname').exec(function (err, student) {
+							token = jwt.sign({email : student.email, state : user.state, 
+								fname : student.fname, lname : student.lname}, secret, {expiresIn : '1h'});
+							res.json({success : true, message : 'User authenticated.', token : token});
+						});
+					} else if (user.state == 'instructor') {
+						schemas.Instructor.findOne({ email : user.email}).select('email fname lname').exec(function (err, instructor) {
+							token = jwt.sign({email : instructor.email, state : user.state, 
+								fname : instructor.fname, lname : instructor.lname}, secret, {expiresIn : '1h'});
+							res.json({success : true, message : 'User authenticated.', token : token});
+						});
+					}
+				}
+			}
+		});
+	});
+
+	router.use( function(req, res, next) {
+		var token = req.body.token || req.body.query || req.headers['x-access-token'];
+		if (token) {
+			jwt.verify(token, secret, function(err, decoded) {
+				if (err) {
+					res.json({success : false, message : 'Token invalid.'});
+				} else {
+					req.decoded = decoded;
+					next();
+				}
+
+			});
+		} else {
+			res.json({success : false, message : 'No token provided!'});
+		}
+	});
+
+	router.post('/me', function(req, res){
+		res.send(req.decoded);
 	});
 
 	return router;
