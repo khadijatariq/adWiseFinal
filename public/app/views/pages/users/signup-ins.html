@@ -20,7 +20,7 @@
                     <input type="radio" name="gender" value="female" ng-model="register.regData.gender"/>Female
                 </label>
                 <br/>
-                <input type="text" name="email" required autocomplete="off" class="form-control input-lg" placeholder="Your Campus Email" ng-model="register.regData.email"/>
+                <input type="email" name="email" required autocomplete="off" class="form-control input-lg" placeholder="Your Campus Email" ng-model="register.regData.email"/>
                 <div class="form-group">
                     <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
                         <option value="" disabled selected hidden>Select your field</option>
@@ -38,10 +38,6 @@
                 <input type="password" name="confirm_password" required autocomplete="off" class="form-control input-lg" placeholder="Confirm Password" ng-model="register.regData.passcheck"/>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Create my account</button>
                 <br/>
-                <div class="jumbotron text-center" ng-show="register.loading">
-                    <span class="glyphicon glyphicon-repeat spinner"></span>
-                    <p>Loading....</p>
-                </div>
                 <div class="row show-hide-message" ng-show="register.successMsg">
                     <div class="alert alert-success">{{register.successMsg}}</div>
                 </div>

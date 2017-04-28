@@ -7,19 +7,25 @@ angular.module('userControllers', ['userServices'])
 	app.regStu = function(regData) {
 		app.errorMsg = false;
 		if (app.regData.passcheck === app.regData.password){
-			app.loading = true;
-			app.regData.state = "student";
-			User.create(app.regData).then(function(data) {
-				app.loading = false;
-				if (data.data.success) {
-					app.successMsg = data.data.message + " Redirecting...";
-					$timeout(function() {
-						$location.path("/");
-					}, 1000);
+			if (app.regData.password.length > 5) {
+				if (User.passCheck(app.regData.password)){
+					app.regData.state = "student";
+					User.create(app.regData).then(function(data) {
+						if (data.data.success) {
+							app.successMsg = data.data.message + " Redirecting...";
+							$timeout(function() {
+								$location.path("/");
+							}, 1000);
+						} else {
+							app.errorMsg = data.data.message;
+						}
+					});
 				} else {
-					app.errorMsg = data.data.message;
+					app.errorMsg = "Password must contain at least 1 numeric character."
 				}
-			});
+			} else {
+				app.errorMsg = "Password must contain at least 6 characters."
+			}
 		} else {
 			app.errorMsg = "These passwords do not match. Try again?";
 		}
@@ -28,19 +34,25 @@ angular.module('userControllers', ['userServices'])
 	app.regIns = function(regData) {
 		app.errorMsg = false;
 		if (app.regData.passcheck === app.regData.password){
-			app.loading = true;
-			app.regData.state = "instructor";
-			User.create(app.regData).then(function(data) {
-				app.loading = false;
-				if (data.data.success) {
-					app.successMsg = data.data.message + " Redirecting...";
-					$timeout(function() {
-						$location.path("/");
-					}, 1000);
+			if (app.regData.password.length > 5) {
+				if (User.passCheck(app.regData.password)){
+					app.regData.state = "instructor";
+					User.create(app.regData).then(function(data) {
+						if (data.data.success) {
+							app.successMsg = data.data.message + " Redirecting...";
+							$timeout(function() {
+								$location.path("/");
+							}, 1000);
+						} else {
+							app.errorMsg = data.data.message;
+						}
+					});
 				} else {
-					app.errorMsg = data.data.message;
-				}
-			});
+						app.errorMsg = "Password must contain at least 1 numeric character."
+					}
+			} else {
+				app.errorMsg = "Password must contain at least 6 characters."
+			}
 		} else {
 			app.errorMsg = "These passwords do not match. Try again?";
 		}
