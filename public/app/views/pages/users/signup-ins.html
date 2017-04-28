@@ -14,22 +14,22 @@
                 </div>
                 <label>Gender : </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender" id=male/>Male
+                    <input type="radio" name="gender" value="male" ng-model="register.regData.gender"/>Male
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" name="gender" id=female/>Female
+                    <input type="radio" name="gender" value="female" ng-model="register.regData.gender"/>Female
                 </label>
                 <br/>
                 <input type="text" name="email" required autocomplete="off" class="form-control input-lg" placeholder="Your Campus Email" ng-model="register.regData.email"/>
                 <div class="form-group">
-                    <select class="form-control input-lg" id="sel1" onchange="changeCol(this)">
+                    <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
                         <option value="" disabled selected hidden>Select your field</option>
-                        <option>Artificial Intelligence</option>
-                        <option>Computer Graphics</option>
-                        <option>Computer Networks</option>
-                        <option>Human Computer Interaction</option>
-                        <option>Operating Systems</option>
-                        <option>Software Engineering</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Computer Graphics">Computer Graphics</option>
+                        <option value=">Computer Networks">Computer Networks</option>
+                        <option value="Human Computer Interaction">Human Computer Interaction</option>
+                        <option value="Operating Systems">Operating Systems</option>
+                        <option value="Software Engineering">Software Engineering</option>
                     </select>
                 </div>
                 <input type="text" name="roomno" required autocomplete="off" class="form-control input-lg" placeholder="Your Room No." ng-model="register.regData.room"/>

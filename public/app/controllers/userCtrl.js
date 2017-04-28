@@ -5,6 +5,7 @@ angular.module('userControllers', ['userServices'])
 	var app = this;
 
 	app.regStu = function(regData) {
+		console.log(app.regData)
 		app.errorMsg = false;
 		if (app.regData.passcheck === app.regData.password){
 			app.loading = true;

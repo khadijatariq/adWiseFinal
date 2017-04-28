@@ -74,8 +74,9 @@ span.tab-space {padding-left:1.5em;}
 }
 .form .form-control { margin-bottom: 7px; }
 #sel1 {
-    color: gray;
+    color: rgba(153, 153, 165, 1);
+    font-size: 16;
 }
 #sel1 option {
-    color: black;
+    color: rgba(90, 85, 85, 1);
 }
