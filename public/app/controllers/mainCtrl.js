@@ -9,6 +9,19 @@ angular.module('mainControllers', ['authServices'])
     }
 	
 	$rootScope.$on('$routeChangeStart', function() {
+		if ($location.path() == '/login') {
+			app.login = false;
+			app.signup = true;
+		} else if ($location.path() == '/signup-as-instructor') {
+			app.signup = false;
+			app.login = true;
+		} else if ($location.path() == '/signup-as-student') {
+			app.signup = false;
+			app.login = true;
+		} else {
+			app.login = true;
+			app.signup = true;
+		}
 		if (Auth.isLoggedIn()){
 			Auth.getUser().then( function (data) {
 				app.loggedIn = true;

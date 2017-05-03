@@ -43,6 +43,13 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/login.html'
 	})
 
+	.when('/reset-password', {
+		title : 'RESET PASSWORD',
+		templateUrl: 'app/views/pages/users/reset-password.html',
+		controller: 'passCtrl',
+		controllerAs: 'password'
+	})
+
 	.when('/sdashboard', {
 		title : 'DASHBOARD',
 		templateUrl: 'app/views/pages/users/student/dashboard.html'

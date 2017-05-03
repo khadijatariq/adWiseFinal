@@ -57,4 +57,4 @@ angular.module('userControllers', ['userServices'])
 			app.errorMsg = "These passwords do not match. Try again?";
 		}
 	};
-})
+});

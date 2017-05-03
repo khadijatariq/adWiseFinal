@@ -55,7 +55,7 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav navbar-right" ng-show="!main.loggedIn" style="padding-right: 120px">
-            <li class="dropdown">
+            <li class="dropdown" ng-show="main.signup">
               <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                  aria-expanded="false">Sign Up <span class="caret"></span></a>
               <ul class="dropdown-menu">
@@ -63,7 +63,7 @@
                 <li><a href="/signup-as-instructor">Sign up as instructor</a></li>
               </ul>
             </li>
-            <li><a href="/login">Login</a></li>
+            <li ng-show="main.login"><a href="/login">Login</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" ng-show="main.loggedIn">
             <li><a href="#">Settings</a></li>
