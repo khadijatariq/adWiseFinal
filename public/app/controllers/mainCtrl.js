@@ -1,8 +1,12 @@
 angular.module('mainControllers', ['authServices'])
 
-.controller('mainCtrl', function ($rootScope, $location, $timeout, Auth) {
+.controller('mainCtrl', function ($rootScope, $scope, $location, $timeout, Auth) {
 	var app = this;
 	app.loadMe = false;
+
+	$scope.isActive = function(route) {
+        return route === $location.path();
+    }
 	
 	$rootScope.$on('$routeChangeStart', function() {
 		if (Auth.isLoggedIn()){
