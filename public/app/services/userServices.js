@@ -17,5 +17,33 @@ angular.module('userServices',[])
 		return false;
 	};
 
+	userFactory.readReport = function (file) {
+		var reader = new FileReader();
+		reader.onload = function (loadEvent) {
+			var pdf = new Uint8Array(loadEvent.target.result);
+			PDFJS.getDocument({data: pdf}).then(function(pdf) {
+			    var pagesPromisesArray = new Array(pdf.pdfInfo.numPages+1).join('0').split('').map(function(value, index) {
+			      return pdf.getPage(++index); 
+			    });
+    
+			    Promise.all(pagesPromisesArray).then(function(pages){
+			    	var pagesTextPromisesArray = pages.map(function(page) {
+			        	return page.getTextContent();
+			    	});
+      				Promise.all(pagesTextPromisesArray).then(function(TextArray) {
+      					TextArray.forEach(function(content) {
+      						var strings = content.items.map(function (item) {
+							    return item.str;
+							});
+							//add code to process here
+      					});
+      				});
+      			});
+			});
+		};
+		reader.readAsArrayBuffer(file);
+		return ['hello'];
+	};
+
 	return userFactory;
 });

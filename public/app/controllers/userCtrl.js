@@ -9,17 +9,22 @@ angular.module('userControllers', ['userServices'])
 		if (app.regData.passcheck === app.regData.password){
 			if (app.regData.password.length > 5) {
 				if (User.passCheck(app.regData.password)){
-					app.regData.state = "student";
-					User.create(app.regData).then(function(data) {
-						if (data.data.success) {
-							app.successMsg = data.data.message + " Redirecting...";
-							$timeout(function() {
-								$location.path("/sdashboard");
-							}, 1000);
-						} else {
-							app.errorMsg = data.data.message;
-						}
-					});
+					if (app.regData.fileinfo.type == 'application/pdf'){
+						app.regData.state = "student";
+						var info = User.readReport(app.regData.fileinfo);
+						// User.create(app.regData).then(function(data) {
+						// 	if (data.data.success) {
+						// 		app.successMsg = data.data.message + " Redirecting...";
+						// 		$timeout(function() {
+						// 			$location.path("/sdashboard");
+						// 		}, 1000);
+						// 	} else {
+						// 		app.errorMsg = data.data.message;
+						// 	}
+						// });
+					} else {
+						app.errorMsg = "File uploaded must be a PDF."
+					}
 				} else {
 					app.errorMsg = "Password must contain at least 1 numeric character."
 				}
@@ -57,4 +62,19 @@ angular.module('userControllers', ['userServices'])
 			app.errorMsg = "These passwords do not match. Try again?";
 		}
 	};
-});
+})
+
+.directive("fileread", [function () {
+    return {
+        scope: {
+            fileread: "="
+        },
+        link: function (scope, element, attributes) {
+            element.bind("change", function (changeEvent) {
+                scope.$apply(function () {
+                    scope.fileread = changeEvent.target.files[0];
+                });
+            });
+        }
+    }
+}]);
