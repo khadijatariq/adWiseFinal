@@ -14,7 +14,7 @@ angular.module('userControllers', ['userServices'])
 						if (data.data.success) {
 							app.successMsg = data.data.message + " Redirecting...";
 							$timeout(function() {
-								$location.path("/");
+								$location.path("/sdashboard");
 							}, 1000);
 						} else {
 							app.errorMsg = data.data.message;
@@ -41,7 +41,7 @@ angular.module('userControllers', ['userServices'])
 						if (data.data.success) {
 							app.successMsg = data.data.message + " Redirecting...";
 							$timeout(function() {
-								$location.path("/");
+								$location.path("/idashboard");
 							}, 1000);
 						} else {
 							app.errorMsg = data.data.message;
