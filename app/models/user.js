@@ -14,8 +14,8 @@ var StudentSchema = new Schema({
   	lname: {type: String, required: true},
   	gender: {type: String, required: true, lowercase: true},
   	field: {type: String, required: true, lowercase: true},
-  	gpa: {type: Number, reuqired: true},
-  	cgpa: {type: Number, reuqired: true}
+  	cgpa: {type: Number, reuqired: true},
+  	scgpa: {type: Number, reuqired: true}
 });
 
 var InstructorSchema = new Schema({
@@ -27,6 +27,31 @@ var InstructorSchema = new Schema({
   	room: {type: String, reuqired: true},
   	ext: {type: String, reuqired: true}
 });
+
+var PresentCoursesSchema = new Schema({
+    email: { type: String, required: true, lowercase: true},
+    term: {type: String, required: true},
+    subject: {type: String, required: true, uppercase: true},
+    catalog: {type: String, required: true},
+    courseTitle: {type: String, required: true},
+    units: {type: Number, reuqired: true},
+    courseType: {type: String, reuqired: true}
+});
+
+PresentCoursesSchema.index({email : 1, term : 1, subject : 1, catalog : 1},{unique : true});
+
+var PastCoursesSchema = new Schema({
+    email: { type: String, required: true, lowercase: true},
+    term: {type: String, required: true},
+    subject: {type: String, required: true, uppercase: true},
+    catalog: {type: String, required: true},
+    courseTitle: {type: String, required: true},
+    grade: {type: String, required: true},
+    units: {type: Number, reuqired: true},
+    courseType: {type: String, reuqired: true}
+});
+
+PastCoursesSchema.index({email : 1, term : 1, subject : 1, catalog : 1},{unique : true});
 
 UserSchema.pre('save', function(next) {
 	var user = this;
@@ -43,3 +68,5 @@ UserSchema.methods.comparePassword = function (password) {
 module.exports.User = mongoose.model('Users', UserSchema);
 module.exports.Student = mongoose.model('Students', StudentSchema);
 module.exports.Instructor = mongoose.model('Instructors', InstructorSchema);
+module.exports.PresentCourses = mongoose.model('PresentCourses', PresentCoursesSchema);
+module.exports.PastCourses = mongoose.model('PastCourses', PastCoursesSchema);

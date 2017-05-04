@@ -22,9 +22,32 @@ module.exports = function(router) {
 					student.lname = req.body.lname;
 					student.gender = req.body.gender;
 					student.field = req.body.field;
-					student.gpa = 3.854;
-					student.cgpa = 3.909;
+					student.cgpa = req.body.cgpa;
+					student.scgpa = req.body.scgpa;
 					student.save();
+					req.body.presentCourses.forEach(function(c) {
+						var course = new schemas.PresentCourses();
+						course.email = req.body.email;
+						course.term = c[0];
+					    course.subject = c[1];
+					    course.catalog = c[2];
+					    course.courseTitle = c[3];
+					    course.units = c[4];
+					    course.courseType = c[5];
+						course.save();
+					})
+					req.body.pastCourses.forEach(function(c) {
+						var course = new schemas.PastCourses();
+						course.email = req.body.email;
+						course.term = c[0];
+					    course.subject = c[1];
+					    course.catalog = c[2];
+					    course.courseTitle = c[3];
+					    course.grade = c[4]
+					    course.units = c[5];
+					    course.courseType = c[6];
+						course.save();
+					})
 				} else if (req.body.state == 'instructor'){
 					var instructor = new schemas.Instructor();
 					instructor.email = req.body.email;
