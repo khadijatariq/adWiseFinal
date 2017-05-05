@@ -32,11 +32,6 @@ angular.module('mainControllers', ['authServices'])
 				if (app.state == "student") {
 					app.student = true;
 					app.instructor = false;
-					loc = $location.path()
-					if (loc == '/signup-as-student' || loc == '/signup-as-instructor' || loc == '/login' || loc == '/') {
-						console.log('here');
-						$location.path() = '/sdashboard';
-					}
 				} else {
 					app.student = false;
 					app.instructor = true;

@@ -71,7 +71,7 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 	})
 
 	.when('/ioldposts', {
-		title : 'OLDPOSTS',
+		title : 'OLD POSTS',
 		templateUrl: 'app/views/pages/users/instructor/oldposts.html'
 	})
 
@@ -81,7 +81,7 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 	})
 
 	.when('/imycourses', {
-		title : 'MYCOURSES',
+		title : 'MY COURSES',
 		templateUrl: 'app/views/pages/users/instructor/mycourses.html'
 	})
 
