@@ -60,6 +60,16 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/instructor/dashboard.html'
 	})
 
+	.when('/instructors', {
+		title : 'INSTRUCTORS',
+		templateUrl: 'app/views/pages/users/common/instructors.html'
+	})
+
+	.when('/careers', {
+		title : 'CAREERS',
+		templateUrl: 'app/views/pages/users/common/careers.html'
+	})
+
 	.otherwise({ redirectTo: '/'});
 
 	$locationProvider.html5Mode({
