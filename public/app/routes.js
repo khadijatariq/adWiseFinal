@@ -55,6 +55,11 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/dashboard.html'
 	})
 
+	.when('/scareers', {
+		title : 'CAREERS',
+		templateUrl: 'app/views/pages/users/student/careers.html'
+	})
+
 	.when('/idashboard', {
 		title : 'DASHBOARD',
 		templateUrl: 'app/views/pages/users/instructor/dashboard.html'
@@ -71,12 +76,12 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 	})
 
 	.when('/iinstructors', {
-		title : 'OLDPOSTS',
+		title : 'INSTRUCTORS',
 		templateUrl: 'app/views/pages/users/instructor/instructors.html'
 	})
 
 	.when('/imycourses', {
-		title : 'OLDPOSTS',
+		title : 'MYCOURSES',
 		templateUrl: 'app/views/pages/users/instructor/mycourses.html'
 	})
 
