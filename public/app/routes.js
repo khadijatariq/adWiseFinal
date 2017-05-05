@@ -70,6 +70,21 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/courses.html'
 	})
 
+	.when('/sabout', {
+		title : 'ABOUT',
+		templateUrl: 'app/views/pages/users/student/about.html'
+	})
+
+	.when('/sfaq', {
+		title : 'FAQ',
+		templateUrl: 'app/views/pages/users/student/faq.html'
+	})
+
+	.when('/scontact', {
+		title : 'CONTACT',
+		templateUrl: 'app/views/pages/users/student/contact.html'
+	})
+
 	.when('/sinstructors', {
 		title : 'INSTRUCTORS',
 		templateUrl: 'app/views/pages/users/student/instructors.html'
@@ -100,6 +115,20 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/instructor/mycourses.html'
 	})
 
+	.when('/iabout', {
+		title : 'ABOUT',
+		templateUrl: 'app/views/pages/users/instructor/about.html'
+	})
+
+	.when('/ifaq', {
+		title : 'FAQ',
+		templateUrl: 'app/views/pages/users/instructor/faq.html'
+	})
+
+	.when('/icontact', {
+		title : 'CONTACT',
+		templateUrl: 'app/views/pages/users/instructor/contact.html'
+	})
 
 	.otherwise({ redirectTo: '/'});
 
