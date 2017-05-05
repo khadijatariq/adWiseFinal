@@ -60,6 +60,21 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/careers.html'
 	})
 
+	.when('/sahistory', {
+		title : 'ACADEMIC_HISTORY',
+		templateUrl: 'app/views/pages/users/student/ahistory.html'
+	})
+
+	.when('/scourses', {
+		title : 'COURSES',
+		templateUrl: 'app/views/pages/users/student/courses.html'
+	})
+
+	.when('/sinstructors', {
+		title : 'INSTRUCTORS',
+		templateUrl: 'app/views/pages/users/student/instructors.html'
+	})
+
 	.when('/idashboard', {
 		title : 'DASHBOARD',
 		templateUrl: 'app/views/pages/users/instructor/dashboard.html'
