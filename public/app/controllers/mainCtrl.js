@@ -29,9 +29,23 @@ angular.module('mainControllers', ['authServices'])
 				app.fname = data.data.fname;
 				app.lname = data.data.lname;
 				app.state = data.data.state;
+				if (app.state == "student") {
+					app.student = true;
+					app.instructor = false;
+					loc = $location.path()
+					if (loc == '/signup-as-student' || loc == '/signup-as-instructor' || loc == '/login' || loc == '/') {
+						console.log('here');
+						$location.path() = '/sdashboard';
+					}
+				} else {
+					app.student = false;
+					app.instructor = true;
+				}
 			})
 		} else {
 			app.loggedIn = false;
+			app.student = false;
+			app.instructor = false;
 		}
 		app.loadMe = true;
 	});

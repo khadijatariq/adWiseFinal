@@ -81,6 +81,23 @@
         </div>
       </div>
     </nav>
+    <div class="col-sm-3 col-md-2 sidebar" style="background-color:#eeeeee" ng-show="main.student">
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li><a href="careers.html">Career Paths</a></li>
+            <li><a href="ahistory.html">Academic History</a></li>
+            <li><a href="courses.html">All Courses</a></li>
+            <li><a href="instructors.html">All Instructors</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+            <li><a href="#">Enrollment</a></li>
+            <li><a href="https://pay.lums.edu.pk/" target="_blank">Transcript</a></li>
+            <li><a href="#">Useful Links</a></li>
+        </ul>
+    </div>
+
     <div ng-view></div>
     <div class="navbar navbar-default navbar-fixed-bottom" role="navigation" ng-show="!main.loggedIn">
       <div class="container" id="map">
