@@ -65,6 +65,22 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/instructor/courses.html'
 	})
 
+	.when('/ioldposts', {
+		title : 'OLDPOSTS',
+		templateUrl: 'app/views/pages/users/instructor/oldposts.html'
+	})
+
+	.when('/iinstructors', {
+		title : 'OLDPOSTS',
+		templateUrl: 'app/views/pages/users/instructor/instructors.html'
+	})
+
+	.when('/imycourses', {
+		title : 'OLDPOSTS',
+		templateUrl: 'app/views/pages/users/instructor/mycourses.html'
+	})
+
+
 	.otherwise({ redirectTo: '/'});
 
 	$locationProvider.html5Mode({
