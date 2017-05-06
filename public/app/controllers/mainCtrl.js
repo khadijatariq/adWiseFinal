@@ -1,6 +1,6 @@
-angular.module('mainControllers', ['authServices','stuServices'])
+angular.module('mainControllers', ['authServices','stuServices','userServices'])
 
-.controller('mainCtrl', function ($rootScope, $scope, $location, $timeout, Auth, Student) {
+.controller('mainCtrl', function ($rootScope, $scope, $location, $timeout, User, Auth, Student) {
 	var app = this;
 	app.loadMe = false;
 
@@ -38,18 +38,26 @@ angular.module('mainControllers', ['authServices','stuServices'])
 							for (var i = 0; i < c1[1].length; i++){
 								c1[1][i].grade = '-';
 							}
-							console.log(c1);
-							if (c1[1].length >= 5){
-								app.courses = c1[1].slice(0,6);
-							} else {
-								app.courses = c1[1].concat(c1[0].slice(c1[0].length-6+c1[1].length,c1[0].length));
-							}
+							c2 = c1[0].concat(c1[1]);
+							c1 = Student.sortCourses(c2);
+							list = [];
+							c1.forEach(function(x) {
+								list = list.concat(x);
+							})
+							limit = 5;
+							app.courses = list.slice(0,limit);
 						});
 					} else if ($location.path() == '/sahistory') {
 						Student.getCourses({email: app.email}).then(function(c) {
 							c1 = c.data.allCourses;
-							c1 = Student.sortCourses(c1[0]);
-							app.courses = c1;
+							c2 = Student.sortCourses(c1[0]);
+							app.courses = c2;
+							courses = []
+							c1[0].forEach(function(c) {
+								courses.push([c.term,c.subject,c.catalog,c.courseTitle,c.grade,c.units,c.courseType]);
+							})
+							app.scgpa = User.getScgpa(courses);
+							app.cgpa = User.getGpa(courses);
 						});
 					}
 				} else {
