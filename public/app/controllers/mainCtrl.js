@@ -58,6 +58,10 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							})
 							app.scgpa = User.getScgpa(courses);
 							app.cgpa = User.getGpa(courses);
+							app.creds = User.getCreds(courses);
+							console.log(app.creds)
+							app.mcreds = User.getMcreds(courses);
+							console.log(app.mcreds)
 						});
 					}
 				} else {

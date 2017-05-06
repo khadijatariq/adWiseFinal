@@ -45,5 +45,24 @@ angular.module('userServices',[])
 		return gpa.toFixed(3);
 	};
 
+	userFactory.getCreds = function (course) {
+		total = 0;
+		sum = 0.00;
+		course.forEach(function(x) {
+				total = total + x[5];
+		})
+		return total;
+	};
+
+	userFactory.getMcreds = function (course) {
+		total = 0;
+		sum = 0.00;
+		course.forEach(function(x) {
+			if (x[1] == "CS")
+				total = total + x[5];
+		})
+		return total;
+	};
+
 	return userFactory;
 });
