@@ -52,16 +52,17 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							c1 = c.data.allCourses;
 							c2 = Student.sortCourses(c1[0]);
 							app.courses = c2;
-							courses = []
+							courses = [];
 							c1[0].forEach(function(c) {
 								courses.push([c.term,c.subject,c.catalog,c.courseTitle,c.grade,c.units,c.courseType]);
 							})
 							app.scgpa = User.getScgpa(courses);
 							app.cgpa = User.getGpa(courses);
+							c1[1].forEach(function(c) {
+								courses.push([c.term,c.subject,c.catalog,c.courseTitle,c.grade,c.units,c.courseType]);
+							})
 							app.creds = User.getCreds(courses);
-							console.log(app.creds)
 							app.mcreds = User.getMcreds(courses);
-							console.log(app.mcreds)
 						});
 					}
 				} else {

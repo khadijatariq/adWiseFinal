@@ -56,7 +56,7 @@ angular.module('userServices',[])
 	userFactory.getMcreds = function (course) {
 		total = 0;
 		course.forEach(function(x) {
-			if (x[1] == "CS")
+			if (x[1] == "CS" && x[2] != 497)
 				total = total + x[5];
 		})
 		return total;
