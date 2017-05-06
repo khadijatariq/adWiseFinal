@@ -63,6 +63,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							})
 							app.creds = User.getCreds(courses);
 							app.mcreds = User.getMcreds(courses);
+							app.typeinfo = User.getTypeInfo(courses);
 						});
 					}
 				} else {
