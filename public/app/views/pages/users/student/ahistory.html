@@ -52,8 +52,28 @@
                     </table>
                 </div>
 
+                <h2 class="sub-header" style="color:#79be1f">Breakdown</h2>
 
-
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Course Type</th>
+                            <th>Credits Required</th>
+                            <th>Credits Used</th>
+                            <th>Credits Needed</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>{{ main.ctype }}</td>
+                            <td>{{ main.credsreq }}</td>
+                            <td>{{ main.credsused }}</td>
+                            <td>{{ main.credsneed }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
                 <h2 class="sub-header" style="color:#79be1f">Weekly Schedule</h2>
