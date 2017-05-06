@@ -65,11 +65,11 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>{{ main.ctype }}</td>
-                            <td>{{ main.credsreq }}</td>
-                            <td>{{ main.credsused }}</td>
-                            <td>{{ main.credsneed }}</td>
+                        <tr ng-repeat="course in main.typeinfo">
+                            <td>{{ course.cType }}</td>
+                            <td>{{ course.required }}</td>
+                            <td>{{ course.used }}</td>
+                            <td>{{ course.needed }}</td>
                         </tr>
                         </tbody>
                     </table>
