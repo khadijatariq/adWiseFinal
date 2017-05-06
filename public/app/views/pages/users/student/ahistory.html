@@ -25,8 +25,6 @@
             </div>
             <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
                 <br />
-                <a href="https://pay.lums.edu.pk/" style="font-weight:bold;" target="_blank">TRANSCRIPT</a>
-                <a href="https://zambeel.lums.edu.pk/" style="font-weight:bold; margin-left:40px;" target="_blank">ZAMBEEL</a>
                 <br />
                 <br />
 
@@ -69,62 +67,20 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
+                            <th>Term</th>
                             <th>Course Code</th>
-                            <th>Name</th>
-                            <th>Instructor</th>
+                            <th>Title</th>
                             <th>Credits</th>
                             <th>Grade</th>
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>A-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>A-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>A-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>A-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>A-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>A-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>A-</td>
+                        <tbody ng-repeat="term in main.courses">
+                        <tr ng-repeat="course in term">
+                            <td>{{ course.term }}</td>
+                            <td>{{ course.subject }} {{ course.catalog }}</td>
+                            <td>{{ course.courseTitle }}</td>
+                            <td>{{ course.units }}</td>
+                            <td>{{ course.grade }}</td>
                         </tr>
                         </tbody>
                     </table>

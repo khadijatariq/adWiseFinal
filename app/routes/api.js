@@ -92,6 +92,26 @@ module.exports = function(router) {
 		});
 	});
 
+	//get academic history info
+	router.post('/courses', function(req, res){
+		courses = [];
+		schemas.PastCourses.find({email: req.body.email}).select('term subject catalog courseTitle grade units courseType').exec(function(err, course1) {
+			if (!err) {
+				courses.push(course1);
+				schemas.PresentCourses.find({email: req.body.email}).select('term subject catalog courseTitle units courseType').exec(function(err, course2) {
+					if (!err) {
+						courses.push(course2);
+						res.json({success : true, allCourses: courses});
+					} else {
+						res.json({success : true, allCourses: []});	
+					}
+				});
+			} else {
+				res.json({success : true, allCourses: []});
+			}
+		});
+	});
+
 	router.use( function(req, res, next) {
 		var token = req.body.token || req.body.query || req.headers['x-access-token'];
 		if (token) {

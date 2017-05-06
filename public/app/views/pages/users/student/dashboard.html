@@ -56,41 +56,20 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
+                            <th>Term</th>
                             <th>Course Code</th>
-                            <th>Name</th>
-                            <th>Instructor</th>
+                            <th>Title</th>
                             <th>Credits</th>
                             <th>Grade</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>CS 678</td>
-                            <td>Topics in Internet Research</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 678</td>
-                            <td>Topics in Internet Research</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 678</td>
-                            <td>Topics in Internet Research</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>CS 678</td>
-                            <td>Topics in Internet Research</td>
-                            <td>Dr. Ihsan Ayyub Qaazi</td>
-                            <td>3</td>
-                            <td>-</td>
+                        <tr ng-repeat="course in main.courses">
+                            <td>{{ course.term }}</td>
+                            <td>{{ course.subject }} {{ course.catalog }}</td>
+                            <td>{{ course.courseTitle }}</td>
+                            <td>{{ course.units }}</td>
+                            <td>{{ course.grade }}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -98,7 +77,7 @@
 
 
                 <a href="/scourses"><h2 class="sub-header" style="color:#79be1f"><img src="assets/images/book.png" style="max-width:35px;margin-right: 10px;
-                    margin-bottom: 6px;">Courses</h2></a>
+                    margin-bottom: 6px;">All Courses</h2></a>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
