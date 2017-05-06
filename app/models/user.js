@@ -14,8 +14,8 @@ var StudentSchema = new Schema({
   	lname: {type: String, required: true},
   	gender: {type: String, required: true, lowercase: true},
   	field: {type: String, required: true, lowercase: true},
-  	cgpa: {type: Number, reuqired: true},
-  	scgpa: {type: Number, reuqired: true}
+  	cgpa: {type: Number, required: true},
+  	scgpa: {type: Number, required: true}
 });
 
 var InstructorSchema = new Schema({
@@ -24,8 +24,8 @@ var InstructorSchema = new Schema({
   	lname: {type: String, required: true},
   	gender: {type: String, required: true, lowercase: true},
   	field: {type: String, required: true, lowercase: true},
-  	room: {type: String, reuqired: true},
-  	ext: {type: String, reuqired: true}
+  	room: {type: String, required: true},
+  	ext: {type: String, required: true}
 });
 
 var PresentCoursesSchema = new Schema({
@@ -34,8 +34,8 @@ var PresentCoursesSchema = new Schema({
     subject: {type: String, required: true, uppercase: true},
     catalog: {type: String, required: true},
     courseTitle: {type: String, required: true},
-    units: {type: Number, reuqired: true},
-    courseType: {type: String, reuqired: true}
+    units: {type: Number, required: true},
+    courseType: {type: String, required: true}
 });
 
 PresentCoursesSchema.index({email : 1, term : 1, subject : 1, catalog : 1},{unique : true});
@@ -47,8 +47,8 @@ var PastCoursesSchema = new Schema({
     catalog: {type: String, required: true},
     courseTitle: {type: String, required: true},
     grade: {type: String, required: true},
-    units: {type: Number, reuqired: true},
-    courseType: {type: String, reuqired: true}
+    units: {type: Number, required: true},
+    courseType: {type: String, required: true}
 });
 
 PastCoursesSchema.index({email : 1, term : 1, subject : 1, catalog : 1},{unique : true});
