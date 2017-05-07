@@ -23,16 +23,17 @@
 
             <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
             <div class="row">
-                <input type="text" name="coursecode" required autocomplete="off" class="form-control input-lg" placeholder="Course Code" ng-model="course.cData.ccode"/>
+                <form class="form" ng-submit="register.regIns(regData);">
+                <input type="text" name="coursecode" required autocomplete="off" class="form-control input-lg" placeholder="Course Code  e.g. CS225" ng-model="course.cData.ccode"/>
                 <br />
 
                 <input type="text" name="coursetitle" required autocomplete="off" class="form-control input-lg" placeholder="Course Title" ng-model="course.cData.ctitle"/>
                 <br />
 
-                <input type="text" name="coursetitle" required autocomplete="off" class="form-control input-lg" placeholder="Course Outline" ng-model="course.cData.coutline"/>
+                <input type="text" name="coursetitle" required autocomplete="off" class="form-control input-lg" placeholder="Course Outline Link" ng-model="course.cData.coutline"/>
                 <br />
 
-                <input type="text" name="coursetitle" required autocomplete="off" class="form-control input-lg" placeholder="Pre Req Course Code e.g. CS 225" ng-model="course.cData.precode"/>
+                <input type="text" name="coursetitle" required autocomplete="off" class="form-control input-lg" placeholder="Pre Req Course Code e.g. CS100" ng-model="course.cData.precode"/>
                 <br />
 
                 <div class="form-group">
@@ -52,6 +53,7 @@
                 <div class="col-sm-1-offset-10 col-md-3-offset-9">
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Add Course</button>
                 </div>
+                </form>
             </div>
             <br />
             <div class="row">
