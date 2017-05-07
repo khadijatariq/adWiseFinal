@@ -113,6 +113,31 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/allcourses', function(req, res){
+		courses = req.body;
+		courses.forEach(function(c) {
+			var course = new schemas.AllCourses();
+			course.catalog = c.catalog;
+			course.courseTitle = c.cTitle;
+		    course.instructor = c.iname;
+		    course.outline = c.outline;
+		    course.field = "Networks";
+		    course.prereq = "CS200";
+			course.save();
+		});
+		res.json({success: true, message: 'Data received.'});
+	});
+
+	router.post('/getallcourses', function(req, res){
+		schemas.AllCourses.find({}, function(err,c){
+			if (err){
+				res.json({success: false, courses: []});
+			} else {
+				res.json({success: true, courses: c});
+			}
+		});
+	});
+
 	router.use( function(req, res, next) {
 		var token = req.body.token || req.body.query || req.headers['x-access-token'];
 		if (token) {
@@ -132,10 +157,6 @@ module.exports = function(router) {
 
 	router.post('/me', function(req, res){
 		res.send(req.decoded);
-	});
-
-	router.post('/hello', function(req, res){
-		console.log("sjhajshfkj");
 	});
 
 	return router;

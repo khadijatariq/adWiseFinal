@@ -8,7 +8,7 @@
             <ul class="nav nav-sidebar">
                 <li><a href="/imycourses">My Courses</a></li>
                 <li><a href="#">View Evaluations & Reviews</a></li>
-                <li><a href="/icourses">All Courses </a></li>
+                <li><a href="/icourses">All Courses</a></li>
                 <li><a href="/iinstructors">All Instructors </a></li>
             </ul>
         </div>
@@ -111,55 +111,18 @@
                     <table class="table table-striped">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Header</th>
-                            <th>Header</th>
-                            <th>Header</th>
-                            <th>Header</th>
+                            <th>Course Code</th>
+                            <th>Name</th>
+                            <th>Instructor</th>
+                            <th>Outline</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>1,001</td>
-                            <td>Lorem</td>
-                            <td>ipsum</td>
-                            <td>dolor</td>
-                            <td>sit</td>
-                        </tr>
-                        <tr>
-                            <td>1,002</td>
-                            <td>amet</td>
-                            <td>consectetur</td>
-                            <td>adipiscing</td>
-                            <td>elit</td>
-                        </tr>
-                        <tr>
-                            <td>1,003</td>
-                            <td>Integer</td>
-                            <td>nec</td>
-                            <td>odio</td>
-                            <td>Praesent</td>
-                        </tr>
-                        <tr>
-                            <td>1,003</td>
-                            <td>libero</td>
-                            <td>Sed</td>
-                            <td>cursus</td>
-                            <td>ante</td>
-                        </tr>
-                        <tr>
-                            <td>1,004</td>
-                            <td>dapibus</td>
-                            <td>diam</td>
-                            <td>Sed</td>
-                            <td>nisi</td>
-                        </tr>
-                        <tr>
-                            <td>1,005</td>
-                            <td>Nulla</td>
-                            <td>quis</td>
-                            <td>sem</td>
-                            <td>at</td>
+                        <tr ng-repeat="course in main.allCourses">
+                            <td>{{ course.catalog }}</td>
+                            <td>{{ course.cTitle }}</td>
+                            <td>{{ course.iname }}</td>
+                            <td><a ng-href="{{ course.outline }}">Download</a></td>
                         </tr>
                         </tbody>
                     </table>

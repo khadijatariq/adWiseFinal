@@ -46,7 +46,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 								list = list.concat(x);
 							})
 							app.courses = list.slice(0,5);
-							c = User.getAllCourses();
+							c = User.storeAllCourses();
 							app.allCourses = c.slice(0,6);
 						});
 					} else if ($location.path() == '/sahistory') {
@@ -74,6 +74,14 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 					app.instructor = true;
 					app.room = data.data.room;
 					app.ext = data.data.ext;
+					if ($location.path() == '/idashboard'){
+						c = User.storeAllCourses();
+						app.allCourses = c.slice(0,6);
+					} else if ($location.path() == '/icourses'){
+						User.getAllCourses().then(function(c) {
+							app.allCourses = c.data.courses;
+						});
+					}
 				}
 			})
 		} else {

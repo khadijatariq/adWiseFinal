@@ -53,6 +53,15 @@ var PastCoursesSchema = new Schema({
 
 PastCoursesSchema.index({email : 1, term : 1, subject : 1, catalog : 1},{unique : true});
 
+var AllCoursesSchema = new Schema({
+    catalog: { type: String, required: true, unique: true},
+    courseTitle: {type: String, required: true},
+    instructor: {type: String, required: true},
+    outline: {type: String, required: true},
+    field: {type: String, required: true},
+    prereq: {type: String, required: true}
+});
+
 UserSchema.pre('save', function(next) {
 	var user = this;
 	bcrypt.hash(user.password, null, null, function(err, hash) {
@@ -70,3 +79,4 @@ module.exports.Student = mongoose.model('Students', StudentSchema);
 module.exports.Instructor = mongoose.model('Instructors', InstructorSchema);
 module.exports.PresentCourses = mongoose.model('PresentCourses', PresentCoursesSchema);
 module.exports.PastCourses = mongoose.model('PastCourses', PastCoursesSchema);
+module.exports.AllCourses = mongoose.model('AllCourses', AllCoursesSchema);

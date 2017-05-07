@@ -35,58 +35,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Shafay Shamail</td>
-                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%
-                            2F2016-2017%2FFall+2016-17&file=CS+202-EE+202-Data+Structures-Shafay+Shamail.pdf">
-                                Fall '16-17</a></td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Shafay Shamail</td>
-                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%
-                            2F2016-2017%2FFall+2016-17&file=CS+202-EE+202-Data+Structures-Shafay+Shamail.pdf">
-                                Fall '16-17</a></td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Shafay Shamail</td>
-                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%
-                            2F2016-2017%2FFall+2016-17&file=CS+202-EE+202-Data+Structures-Shafay+Shamail.pdf">
-                                Fall '16-17</a></td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Shafay Shamail</td>
-                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%
-                            2F2016-2017%2FFall+2016-17&file=CS+202-EE+202-Data+Structures-Shafay+Shamail.pdf">
-                                Fall '16-17</a></td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Shafay Shamail</td>
-                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%
-                            2F2016-2017%2FFall+2016-17&file=CS+202-EE+202-Data+Structures-Shafay+Shamail.pdf">
-                                Fall '16-17</a></td>
-                        </tr>
-                        <tr>
-                            <td>CS 202</td>
-                            <td>Data Structures</td>
-                            <td>Dr. Shafay Shamail</td>
-                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%
-                            2F2016-2017%2FFall+2016-17&file=CS+202-EE+202-Data+Structures-Shafay+Shamail.pdf">
-                                Fall '16-17</a></td>
+                        <tr ng-repeat="course in main.allCourses">
+                            <td>{{ course.catalog }}</td>
+                            <td>{{ course.courseTitle }}</td>
+                            <td>{{ course.instructor }}</td>
+                            <td><a ng-href="{{ course.outline }}">Download</a></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
-
 
             </div>
         </div>
