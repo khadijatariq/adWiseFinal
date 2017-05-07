@@ -23,6 +23,28 @@
             </div>
             <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
                 <br />
+
+         <div class="row">
+            <h2 class="sub-header"  style="color:#79be1f"><img src="assets/images/career.png" style="max-width:35px;margin-right: 10px;
+                    margin-bottom: 6px;">Add a Review</h2>
+             <div class="form-group">
+                    <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
+                        <option value="" disabled selected hidden>Select Course</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    </select>
+                </div>
+
+                <div class="row placeholders">
+                    <input type="text" name="review" value="" required autocomplete="off"
+                           class="form-control input-lg" placeholder="Write a Review" />
+                    <br />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Add a Review</button>
+
+                </div>
+
+        </div>
+        <br />
+
                 <a href="http://suraj.lums.edu.pk/" style="font-weight:bold;">SURAJ</a>
                 <br />
                 <br />
