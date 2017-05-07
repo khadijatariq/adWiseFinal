@@ -115,7 +115,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							}
 						});
 					} else if ($location.path() == '/imycourses'){
-						User.getMyCourses().then(function(c) {
+						User.getMyCourses(app.fname + ' ' + app.lname).then(function(c) {
 							app.myCourses = c.data.courses;
 						});
 					}

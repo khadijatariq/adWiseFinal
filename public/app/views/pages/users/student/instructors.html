@@ -42,13 +42,7 @@
 
         </div>
         <br />
-    <div class="row placeholders">
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i1.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Shafay Shamail</h4>
-            <span class="text-muted">Associate Professor - CS</span>
-            <br />
-            <div class="row placeholders" ng-repeat="four in main.allInstructors">
+        <div class="row placeholders" ng-repeat="four in main.allInstructors">
             <div class="col-xs-6 col-sm-3 placeholder" ng-repeat="ins in four">
                 <a href="/iinsinfo"><img src="assets/images/i3.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"></a>
                 <h4>{{ins}}</h4>
@@ -57,6 +51,7 @@
         </div>
         </div>
     </div>
+</div>
 </div>
 
 <!-- Bootstrap core JavaScript

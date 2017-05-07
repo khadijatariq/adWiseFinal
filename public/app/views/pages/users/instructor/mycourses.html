@@ -23,7 +23,7 @@
 
             <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
             <div class="row">
-                <form class="form" ng-submit="register.regIns(regData);">
+                <form class="form" ng-submit="course.addCourse(cData,main.fname,main.lname);">
                 <input type="text" name="coursecode" required autocomplete="off" class="form-control input-lg" placeholder="Course Code  e.g. CS225" ng-model="course.cData.ccode"/>
                 <br />
 
@@ -37,7 +37,7 @@
                 <br />
 
                 <div class="form-group">
-                    <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
+                    <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="course.cData.field">
                         <option value="" disabled selected hidden>Select Course field</option>
                         <option value="Artificial Intelligence">Artificial Intelligence</option>
                         <option value="Computer Graphics">Computer Graphics</option>

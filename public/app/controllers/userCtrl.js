@@ -219,6 +219,13 @@ angular.module('userControllers', ['userServices'])
 			app.errorMsg = "These passwords do not match. Try again?";
 		}
 	};
+
+	app.addCourse = function(cData,fname,lname) {
+		app.cData.ins = fname + ' ' + lname;
+		User.addCourse(app.cData).then(function(data) {
+			
+		});
+	};
 })
 
 .directive("fileread", [function () {

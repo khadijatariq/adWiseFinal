@@ -147,7 +147,9 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 
 	.when('/imycourses', {
 		title : 'MY COURSES',
-		templateUrl: 'app/views/pages/users/instructor/mycourses.html'
+		templateUrl: 'app/views/pages/users/instructor/mycourses.html',
+		controller: 'regCtrl',
+		controllerAs: 'course'
 	})
 
 	.when('/iinsinfo', {

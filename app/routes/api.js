@@ -169,6 +169,23 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/addcourse', function(req, res){
+		var course = new schemas.AllCourses();
+		course.catalog = req.body.ccode;
+		course.courseTitle = req.body.ctitle;
+		course.instructor = req.body.ins;
+		course.outline = req.body.coutline;
+		course.field = req.body.field;
+		course.prereq = req.body.precode;
+		course.save(function(err) {
+			if (err) {
+				res.json({success: false});
+			} else {
+				res.json({success: true});	
+			}
+		});
+	});
+
 	router.use( function(req, res, next) {
 		var token = req.body.token || req.body.query || req.headers['x-access-token'];
 		if (token) {
