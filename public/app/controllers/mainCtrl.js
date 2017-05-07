@@ -77,6 +77,9 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 					if ($location.path() == '/idashboard'){
 						c = User.storeAllCourses();
 						app.allCourses = c.slice(0,6);
+						User.getMyCourses().then(function(c) {
+							app.myCourses = c.data.courses.slice(0,3);
+						});
 					} else if ($location.path() == '/icourses'){
 						User.getAllCourses().then(function(c) {
 							app.allCourses = c.data.courses;
@@ -93,6 +96,10 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							if (start != ins.length){
 								app.allInstructors.push(ins.slice(start,ins.length));
 							}
+						});
+					} else if ($location.path() == '/imycourses'){
+						User.getMyCourses().then(function(c) {
+							app.myCourses = c.data.courses;
 						});
 					}
 				}
