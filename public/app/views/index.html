@@ -55,8 +55,8 @@
             <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/" style="padding:5px 50px"><img src="assets/images/logo.png" style="max-width:90px; margin-left: 105px;" ng-show="!main.loggedIn"></a>
-            <a class="navbar-brand" href="#"><img src="assets/images/st.png" style="max-width:50px; margin-top: -15px; margin-left: -65px;" ng-show="main.loggedIn"></a>
-            <a class="navbar-brand" href="#" style="color:#428BCA; margin-left: -35px;" ng-show="main.loggedIn">{{main.fname}} {{main.lname}}</a>
+            <a class="navbar-brand" href="/profile"><img src="assets/images/st.png" style="max-width:50px; margin-top: -15px; margin-left: -65px;" ng-show="main.loggedIn"></a>
+            <a class="navbar-brand" href="/profile" style="color:#428BCA; margin-left: -35px;" ng-show="main.loggedIn">{{main.fname}} {{main.lname}}</a>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav navbar-right" ng-show="!main.loggedIn" style="padding-right: 120px">
@@ -71,7 +71,7 @@
             <li ng-show="main.login"><a href="/login">Login</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right" ng-show="main.loggedIn">
-            <li><a href="#">Settings</a></li>
+            <li><a href="/settings">Settings</a></li>
             <li><a href="#" ng-click="main.logout()">Logout</a></li>
           </ul>
           <ul class="nav navbar-nav">
