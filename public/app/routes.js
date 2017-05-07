@@ -90,6 +90,11 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/settings.html'
 	})
 
+	.when('/enrollment', {
+		title : 'ENROLLMENT',
+		templateUrl: 'app/views/pages/users/student/enrollment.html'
+	})
+
 	.when('/scontact', {
 		title : 'CONTACT',
 		templateUrl: 'app/views/pages/users/student/contact.html'
