@@ -45,11 +45,9 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							c1.forEach(function(x) {
 								list = list.concat(x);
 							})
-							limit = 5;
-							app.courses = list.slice(0,limit);
-							User.getAllCourses().then(function(c) {
-								console.log(c);
-							});
+							app.courses = list.slice(0,5);
+							c = User.getAllCourses();
+							app.allCourses = c.slice(0,6);
 						});
 					} else if ($location.path() == '/sahistory') {
 						Student.getCourses({email: app.email}).then(function(c) {
@@ -68,6 +66,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							app.creds = User.getCreds(courses);
 							app.mcreds = User.getMcreds(courses);
 							app.typeinfo = User.getTypeInfo(courses);
+							app.allCourses = User.getAllCourses();
 						});
 					}
 				} else {
