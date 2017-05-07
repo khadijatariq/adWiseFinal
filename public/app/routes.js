@@ -151,7 +151,7 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 	})
 
 	.when('/iinsinfo', {
-		title : 'INSTRUCTORINFO',
+		title : 'INSTRUCTOR INFO',
 		templateUrl: 'app/views/pages/users/instructor/insinfo.html'
 	})
 
