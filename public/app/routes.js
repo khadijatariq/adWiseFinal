@@ -90,7 +90,12 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/instructor/profile.html'
 	})
 
-	.when('/settings', {
+	.when('/isettings', {
+		title : 'SETTINGS',
+		templateUrl: 'app/views/pages/users/instructor/settings.html'
+	})
+
+	.when('/ssettings', {
 		title : 'SETTINGS',
 		templateUrl: 'app/views/pages/users/student/settings.html'
 	})
