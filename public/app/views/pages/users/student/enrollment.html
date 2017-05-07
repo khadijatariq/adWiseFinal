@@ -29,8 +29,20 @@
                 <br />
                 <br />
 
-                <h2 class="sub-header" style="color:#79be1f">Course Suggestions  </h2>
-
+                <h2 class="sub-header" style="color:#79be1f; display:inline">Course Suggestions (Computer Networks)</h2>
+                <br />
+                <br />
+                <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
+                        <option value="" disabled selected hidden>Select another field of interest</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Computer Graphics">Computer Graphics</option>
+                        <option value="Comm Bio">Comm Bio</option>
+                        <option value="Human Computer Interaction">Human Computer Interaction</option>
+                        <option value="Operating Systems">Operating Systems</option>
+                        <option value="Algorithms">Algorithms</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                    </select>
+                <br />
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -43,10 +55,55 @@
                         </thead>
                         <tbody>
                         <tr>
+                            <th>Major Cores</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr>
+                            <td>CS100</td>
+                            <td>Computational Problem Solving</td>
+                            <td>Shafay Shamail</td>
+                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+100-Computational+Problem+Solving-Shafay+Shamail.pdf">Spring '17</td> 
+                        </tr>
+                        <tr>
+                            <td>CS202</td>
+                            <td>Data Structures</td>
+                            <td>Ihsan Ayyub Qaazi</td>
+                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+202-EE202-Data+Structures-Ihsan+Ayyub+Qazi.pdf">Spring '17</td> 
+                        </tr>
+                        <tr>
+                            <td>CS300</td>
+                            <td>Advanced Programming</td>
+                            <td>Junaid Haroon</td>
+                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+300-Advanced+Programming-Junaid+Haroon+Siddiqui.pdf">Spring '17</td> 
+                        </tr>
+                        <tr>
+                            <td>CS315</td>
+                            <td>Theory of Automata</td>
+                            <td>Hammad Alizai</td>
+                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+315-Theory+of+Automata-Muhammad+Hamad+Alizai.pdf">Spring '17</td> 
+                        </tr>
+
+                        <tr>
+                            <th>Major Electives</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                        <!--
                             <td>{{ main.ccode }}</td>
                             <td>{{ main.ctitle }}</td>
                             <td>{{ main.cinst }}</td>
                             <td>{{ main.coutline }}</td>
+                        -->
+
+                            <td>CS382</td>
+                            <td>Network Centric Computing</td>
+                            <td>Fareed Zafar</td>
+                            <td><a href="http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+382-Network-Centric+Computing-Muhammad+Fareed+Zaffar.pdf">Spring '17</td> 
                         </tr>
                         </tbody>
                     </table>
