@@ -143,7 +143,28 @@ module.exports = function(router) {
 			if (err){
 				res.json({success: false, instrcutors: []});
 			} else {
-				res.json({success: true, instructors: c});
+				schemas.Instructor.find({}).select('fname lname').exec(function(err,d){
+					if (err){
+						res.json({success: true, instructors: c});
+					} else {
+						x = [];
+						d.forEach(function(y) {
+							x.push(y.fname+' '+y.lname);
+						});
+						c = c.concat(x);
+						res.json({success: true, instructors: c});
+					}
+				});
+			}
+		});
+	});
+
+	router.post('/getmycourses', function(req, res){
+		schemas.AllCourses.find({instructor : req.body.ins}).select('catalog courseTitle instructor outline').exec(function(err,c){
+			if (err){
+				res.json({success: false, courses: []});
+			} else {
+				res.json({success: true, courses: c});
 			}
 		});
 	});
