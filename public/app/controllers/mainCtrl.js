@@ -75,6 +75,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 					} else if ($location.path() == '/sinstructors'){
 						User.getAllInstructor().then(function(c) {
 							ins = c.data.instructors;
+							app.allInstructors1 = ins;
 							start = 0;
 							app.allInstructors = [];
 							while (start+4 < ins.length){
@@ -117,6 +118,11 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 					} else if ($location.path() == '/imycourses'){
 						User.getMyCourses(app.fname + ' ' + app.lname).then(function(c) {
 							app.myCourses = c.data.courses;
+						});
+					} else if ($location.path() == '/ioldposts'){
+						User.getMyPosts(app.fname + ' ' + app.lname).then(function(c) {
+							app.myPosts = c.data.posts;
+							app.myPosts.reverse();
 						});
 					}
 				}

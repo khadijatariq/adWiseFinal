@@ -148,5 +148,22 @@ angular.module('userServices',[])
 		return $http.post('/api/addcourse', cData);
 	}
 
+	userFactory.addPost = function(pData) {
+		return $http.post('/api/addpost', pData);
+	}
+
+	userFactory.getMyPosts = function(name) {
+		data = {ins : name};
+		return $http.post('/api/getmyposts', data);
+	}
+
+	userFactory.addCourseRev = function(rData) {
+		return $http.post('/api/addcourserev', rData);
+	}
+
+	userFactory.addInstRev = function(rData) {
+		return $http.post('/api/addinstrev', rData);
+	}
+
 	return userFactory;
 });

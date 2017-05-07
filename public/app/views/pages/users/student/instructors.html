@@ -25,21 +25,20 @@
         <div class="row">
             <h2 class="sub-header"  style="color:#79be1f"><img src="assets/images/career.png" style="max-width:35px;margin-right: 10px;
                     margin-bottom: 6px;">Add a Review</h2>
-             <div class="form-group">
-                    <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
-                        <option value="" disabled selected hidden>Select Instructor</option>
-                        <option value="Artificial Intelligence">Artificial Intelligence</option>
-                    </select>
-                </div>
-
+            <form class="form" ng-submit="review.addInstRev(rData,main.fname,main.lname);">
                 <div class="row placeholders">
+                    <div class="form-group">
+                        <select name="instructor" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="review.rData.inst">
+                            <option value="" disabled selected hidden>Select Instructor</option>
+                            <option ng-repeat="ins in main.allInstructors1" value="{{ins}}">{{ins}}</option>
+                        </select>
+                    </div>
                     <input type="text" name="review" value="" required autocomplete="off"
-                           class="form-control input-lg" placeholder="Write a Review" />
+                           class="form-control input-lg" placeholder="Write a Review" ng-model="review.rData.text"/>
                     <br />
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Add a Review</button>
-
                 </div>
-
+            </form>
         </div>
         <br />
         <div class="row placeholders" ng-repeat="four in main.allInstructors">

@@ -62,6 +62,24 @@ var AllCoursesSchema = new Schema({
     prereq: {type: String, required: true}
 });
 
+var PostSchema = new Schema({
+    field: { type: String, required: true},
+    text: {type: String, required: true},
+    instructor: {type: String, required: true},
+});
+
+var CourseReviewSchema = new Schema({
+    course: { type: String, required: true},
+    text: {type: String, required: true},
+    name: {type: String, required: true},
+});
+
+var InstructorReviewSchema = new Schema({
+    instructor: { type: String, required: true},
+    text: {type: String, required: true},
+    name: {type: String, required: true},
+});
+
 UserSchema.pre('save', function(next) {
 	var user = this;
 	bcrypt.hash(user.password, null, null, function(err, hash) {
@@ -80,3 +98,6 @@ module.exports.Instructor = mongoose.model('Instructors', InstructorSchema);
 module.exports.PresentCourses = mongoose.model('PresentCourses', PresentCoursesSchema);
 module.exports.PastCourses = mongoose.model('PastCourses', PastCoursesSchema);
 module.exports.AllCourses = mongoose.model('AllCourses', AllCoursesSchema);
+module.exports.Post = mongoose.model('Posts', PostSchema);
+module.exports.CourseReview = mongoose.model('CourseReviews', CourseReviewSchema);
+module.exports.InstructorReview = mongoose.model('InstructorReviews', InstructorReviewSchema);

@@ -67,7 +67,9 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 
 	.when('/scourses', {
 		title : 'COURSES',
-		templateUrl: 'app/views/pages/users/student/courses.html'
+		templateUrl: 'app/views/pages/users/student/courses.html',
+		controller: 'regCtrl',
+		controllerAs: 'review'
 	})
 
 	.when('/sabout', {
@@ -122,12 +124,16 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 
 	.when('/sinstructors', {
 		title : 'INSTRUCTORS',
-		templateUrl: 'app/views/pages/users/student/instructors.html'
+		templateUrl: 'app/views/pages/users/student/instructors.html',
+		controller: 'regCtrl',
+		controllerAs: 'review'
 	})
 
 	.when('/idashboard', {
 		title : 'DASHBOARD',
-		templateUrl: 'app/views/pages/users/instructor/dashboard.html'
+		templateUrl: 'app/views/pages/users/instructor/dashboard.html',
+		controller: 'regCtrl',
+		controllerAs: 'inst'
 	})
 
 	.when('/icourses', {
@@ -137,7 +143,9 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 
 	.when('/ioldposts', {
 		title : 'OLD POSTS',
-		templateUrl: 'app/views/pages/users/instructor/oldposts.html'
+		templateUrl: 'app/views/pages/users/instructor/oldposts.html',
+		controller: 'regCtrl',
+		controllerAs: 'inst'
 	})
 
 	.when('/iinstructors', {

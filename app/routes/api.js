@@ -186,6 +186,58 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/addpost', function(req, res){
+		var post = new schemas.Post();
+		post.field = req.body.field;
+		post.text = req.body.text;
+		post.instructor = req.body.ins;
+		post.save(function(err) {
+			if (err) {
+				res.json({success: false});
+			} else {
+				res.json({success: true});	
+			}
+		});
+	});
+
+	router.post('/addcourserev', function(req, res){
+		var post = new schemas.CourseReview();
+		post.course = req.body.course;
+		post.text = req.body.text;
+		post.name = req.body.name;
+		post.save(function(err) {
+			if (err) {
+				res.json({success: false});
+			} else {
+				res.json({success: true});	
+			}
+		});
+	});
+
+	router.post('/addinstrev', function(req, res){
+		var post = new schemas.InstructorReview();
+		post.instructor = req.body.inst;
+		post.text = req.body.text;
+		post.name = req.body.name;
+		post.save(function(err) {
+			if (err) {
+				res.json({success: false});
+			} else {
+				res.json({success: true});	
+			}
+		});
+	});
+
+	router.post('/getmyposts', function(req, res){
+		schemas.Post.find({instructor : req.body.ins}).select('field text instructor').exec(function(err,c){
+			if (err){
+				res.json({success: false, posts: []});
+			} else {
+				res.json({success: true, posts: c});
+			}
+		});
+	});
+
 	router.use( function(req, res, next) {
 		var token = req.body.token || req.body.query || req.headers['x-access-token'];
 		if (token) {

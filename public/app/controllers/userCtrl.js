@@ -223,7 +223,36 @@ angular.module('userControllers', ['userServices'])
 	app.addCourse = function(cData,fname,lname) {
 		app.cData.ins = fname + ' ' + lname;
 		User.addCourse(app.cData).then(function(data) {
-			
+			$timeout(function() {
+				window.location.reload();
+			}, 1000);
+		});
+	};
+
+	app.addPost = function(pData,fname,lname) {
+		app.pData.ins = fname + ' ' + lname;
+		User.addPost(app.pData).then(function(data) {
+			$timeout(function() {
+				window.location.reload();
+			}, 1000);
+		});
+	};
+
+	app.addCourseRev = function(rData,fname,lname) {
+		app.rData.name = fname + ' ' + lname;
+		User.addCourseRev(app.rData).then(function(data) {
+			$timeout(function() {
+				window.location.reload();
+			}, 1000);
+		});
+	};
+
+	app.addInstRev = function(rData,fname,lname) {
+		app.rData.name = fname + ' ' + lname;
+		User.addInstRev(app.rData).then(function(data) {
+			$timeout(function() {
+				window.location.reload();
+			}, 1000);
 		});
 	};
 })
