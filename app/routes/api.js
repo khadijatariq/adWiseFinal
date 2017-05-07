@@ -75,15 +75,16 @@ module.exports = function(router) {
 				} else {
 					var token  = null;
 					if (user.state == 'student') {
-						schemas.Student.findOne({ email : user.email}).select('email fname lname').exec(function (err, student) {
+						schemas.Student.findOne({ email : user.email}).select('email fname lname field').exec(function (err, student) {
 							token = jwt.sign({email : student.email, state : user.state, 
-								fname : student.fname, lname : student.lname}, secret, {expiresIn : '1h'});
+								fname : student.fname, lname : student.lname, field : student.field}, secret, {expiresIn : '1h'});
 							res.json({success : true, message : 'User authenticated.', token : token});
 						});
 					} else if (user.state == 'instructor') {
-						schemas.Instructor.findOne({ email : user.email}).select('email fname lname').exec(function (err, instructor) {
+						schemas.Instructor.findOne({ email : user.email}).select('email fname lname field room ext').exec(function (err, instructor) {
 							token = jwt.sign({email : instructor.email, state : user.state, 
-								fname : instructor.fname, lname : instructor.lname}, secret, {expiresIn : '1h'});
+								fname : instructor.fname, lname : instructor.lname, field : instructor.field, 
+								room : instructor.room, ext : instructor.ext}, secret, {expiresIn : '1h'});
 							res.json({success : true, message : 'User authenticated.', token : token});
 						});
 					}
