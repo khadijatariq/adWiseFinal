@@ -106,7 +106,7 @@ angular.module('userServices',[])
 	};
 
 	userFactory.getAllCourses = function() {
-		catalogs = [];
+		catalogs = ["CS100","CS202","CS300","CS315","CS331","CS360","CS382","CS432","CS436","CS473","CS5014","CS510","CS524","CS5312","CS536","CS5614","CS567","CS570","CS585","CS6310","CS636","CS664","CS666","CS220"];
 		titles = [];
 		iname = [];
 		hrefs = [];
