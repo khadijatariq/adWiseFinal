@@ -29,6 +29,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 				app.fname = data.data.fname;
 				app.lname = data.data.lname;
 				app.state = data.data.state;
+				app.field = data.data.field;
 				if (app.state == "student") {
 					app.student = true;
 					app.instructor = false;
@@ -72,6 +73,8 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 				} else {
 					app.student = false;
 					app.instructor = true;
+					app.room = data.data.room;
+					app.ext = data.data.ext;
 				}
 			})
 		} else {

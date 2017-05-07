@@ -55,8 +55,10 @@
             <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="/" style="padding:5px 50px"><img src="assets/images/logo.png" style="max-width:90px; margin-left: 105px;" ng-show="!main.loggedIn"></a>
-            <a class="navbar-brand" href="/profile"><img src="assets/images/st.png" style="max-width:50px; margin-top: -15px; margin-left: -65px;" ng-show="main.loggedIn"></a>
-            <a class="navbar-brand" href="/profile" style="color:#428BCA; margin-left: -35px;" ng-show="main.loggedIn">{{main.fname}} {{main.lname}}</a>
+            <a class="navbar-brand" href="/profile"><img src="assets/images/st.png" style="max-width:50px; margin-top: -15px; margin-left: -65px;" ng-show="main.student"></a>
+            <a class="navbar-brand" href="/profile" style="color:#428BCA; margin-left: -35px;" ng-show="main.student">{{main.fname}} {{main.lname}}</a>
+            <a class="navbar-brand" href="/iprofile"><img src="assets/images/st.png" style="max-width:50px; margin-top: -15px; margin-left: -65px;" ng-show="main.instructor"></a>
+            <a class="navbar-brand" href="/iprofile" style="color:#428BCA; margin-left: -35px;" ng-show="main.instructor">{{main.fname}} {{main.lname}}</a>
         </div>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="nav navbar-nav navbar-right" ng-show="!main.loggedIn" style="padding-right: 120px">
@@ -74,10 +76,20 @@
             <li><a href="/settings">Settings</a></li>
             <li><a href="#" ng-click="main.logout()">Logout</a></li>
           </ul>
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" ng-show="!main.loggedIn">
             <li ng-class="{active: isActive('/about')}"><a href="/about">About Us</a></li>
             <li ng-class="{active: isActive('/contact')}"><a href="/contact">Contact</a></li>
             <li ng-class="{active: isActive('/faq')}"><a href="/faq">FAQ</a></li>
+          </ul>
+          <ul class="nav navbar-nav" ng-show="main.student">
+            <li ng-class="{active: isActive('/sabout')}"><a href="/sabout">About Us</a></li>
+            <li ng-class="{active: isActive('/scontact')}"><a href="/scontact">Contact</a></li>
+            <li ng-class="{active: isActive('/sfaq')}"><a href="/sfaq">FAQ</a></li>
+          </ul>
+          <ul class="nav navbar-nav" ng-show="main.instructor">
+            <li ng-class="{active: isActive('/iabout')}"><a href="/iabout">About Us</a></li>
+            <li ng-class="{active: isActive('/icontact')}"><a href="/icontact">Contact</a></li>
+            <li ng-class="{active: isActive('/ifaq')}"><a href="/ifaq">FAQ</a></li>
           </ul>
         </div>
       </div>
