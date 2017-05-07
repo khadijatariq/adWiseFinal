@@ -80,6 +80,16 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/faq.html'
 	})
 
+	.when('/profile', {
+		title : 'PROFILE',
+		templateUrl: 'app/views/pages/users/student/profile.html'
+	})
+
+	.when('/settings', {
+		title : 'SETTINGS',
+		templateUrl: 'app/views/pages/users/student/settings.html'
+	})
+
 	.when('/scontact', {
 		title : 'CONTACT',
 		templateUrl: 'app/views/pages/users/student/contact.html'
