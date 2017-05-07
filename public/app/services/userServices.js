@@ -134,5 +134,14 @@ angular.module('userServices',[])
 		return $http.post('/api/getallcourses', data);
 	};
 
+	userFactory.getAllInstructor = function() {
+		data = {};
+		return $http.post('/api/getallinstructors', data);
+	}
+
+	userFactory.getMyCourses = function(name) {
+		
+	}
+
 	return userFactory;
 });

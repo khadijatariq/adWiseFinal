@@ -138,6 +138,16 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/getallinstructors', function(req, res){
+		schemas.AllCourses.find({}).distinct('instructor').exec(function(err,c){
+			if (err){
+				res.json({success: false, instrcutors: []});
+			} else {
+				res.json({success: true, instructors: c});
+			}
+		});
+	});
+
 	router.use( function(req, res, next) {
 		var token = req.body.token || req.body.query || req.headers['x-access-token'];
 		if (token) {

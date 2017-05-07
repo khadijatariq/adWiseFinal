@@ -19,78 +19,18 @@
             <h1 class="page-header" style="color:#3DB1C8; text-align:center;"><img src="assets/images/inst2.png" style="max-width:45px;margin-right: 10px;
                 margin-bottom: 6px;">All Instructors</h1>
         </div>
-        <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
-            <br />
-    <div class="row placeholders">
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i1.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Shafay Shamail</h4>
-            <span class="text-muted">Associate Professor - CS</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i2.JPG" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Zartash Afzal Uzmi</h4>
-            <span class="text-muted">Associate Professor - CS/EE</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i3.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Suleman Shahid</h4>
-            <span class="text-muted">Assistant Professor - CS</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i4.JPG" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Naveed Arshad</h4>
-            <span class="text-muted">Associate Professor - CS</span>
+    <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
+    <br />
+
+        <div class="row placeholders" ng-repeat="four in main.allInstructors">
+            <div class="col-xs-6 col-sm-3 placeholder" ng-repeat="ins in four">
+                <img src="assets/images/i3.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                <h4>{{ins}}</h4>
+                <span class="text-muted">Associate Professor - CS</span>
+            </div>
         </div>
     </div>
-
-    <div class="row placeholders">
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i1.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Shafay Shamail</h4>
-            <span class="text-muted">Associate Professor - CS</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i2.JPG" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Zartash Afzal Uzmi</h4>
-            <span class="text-muted">Associate Professor - CS/EE</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i3.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Suleman Shahid</h4>
-            <span class="text-muted">Assistant Professor - CS</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i4.JPG" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Naveed Arshad</h4>
-            <span class="text-muted">Associate Professor - CS</span>
-        </div>
     </div>
-
-    <div class="row placeholders">
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i1.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Shafay Shamail</h4>
-            <span class="text-muted">Associate Professor - CS</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i2.JPG" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Zartash Afzal Uzmi</h4>
-            <span class="text-muted">Associate Professor - CS/EE</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i3.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Suleman Shahid</h4>
-            <span class="text-muted">Assistant Professor - CS</span>
-        </div>
-        <div class="col-xs-6 col-sm-3 placeholder">
-            <img src="assets/images/i4.JPG" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-            <h4>Dr. Naveed Arshad</h4>
-            <span class="text-muted">Associate Professor - CS</span>
-        </div>
-    </div>
-
-        </div>
     </div>
 </div>
 

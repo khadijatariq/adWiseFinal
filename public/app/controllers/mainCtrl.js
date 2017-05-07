@@ -81,6 +81,19 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 						User.getAllCourses().then(function(c) {
 							app.allCourses = c.data.courses;
 						});
+					} else if ($location.path() == '/iinstructors'){
+						User.getAllInstructor().then(function(c) {
+							ins = c.data.instructors;
+							start = 0;
+							app.allInstructors = [];
+							while (start+4 < ins.length){
+								app.allInstructors.push(ins.slice(start,start+4));
+								start = start + 4;
+							}
+							if (start != ins.length){
+								app.allInstructors.push(ins.slice(start,ins.length));
+							}
+						});
 					}
 				}
 			})
