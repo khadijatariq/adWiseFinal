@@ -150,6 +150,11 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/instructor/mycourses.html'
 	})
 
+	.when('/iinsinfo', {
+		title : 'INSTRUCTORINFO',
+		templateUrl: 'app/views/pages/users/instructor/insinfo.html'
+	})
+
 	.when('/iabout', {
 		title : 'ABOUT',
 		templateUrl: 'app/views/pages/users/instructor/about.html'
