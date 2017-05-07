@@ -21,7 +21,27 @@
                 margin-bottom: 6px;">All Instructors</h1>
         </div>
         <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
-            <br />
+        <br />
+        <div class="row">
+            <h2 class="sub-header"  style="color:#79be1f"><img src="assets/images/career.png" style="max-width:35px;margin-right: 10px;
+                    margin-bottom: 6px;">Add a Review</h2>
+             <div class="form-group">
+                    <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
+                        <option value="" disabled selected hidden>Select Instructor</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    </select>
+                </div>
+
+                <div class="row placeholders">
+                    <input type="text" name="review" value="" required autocomplete="off"
+                           class="form-control input-lg" placeholder="Write a Review" />
+                    <br />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Add a Review</button>
+
+                </div>
+
+        </div>
+        <br />
     <div class="row placeholders">
         <div class="col-xs-6 col-sm-3 placeholder">
             <img src="assets/images/i1.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
