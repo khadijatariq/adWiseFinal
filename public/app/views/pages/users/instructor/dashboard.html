@@ -25,8 +25,22 @@
                 <h2 class="sub-header"  style="color:#79be1f"><img src="assets/images/career.png" style="max-width:35px;margin-right: 10px;
                     margin-bottom: 6px;">Post</h2>
                 <div class="row placeholders">
+
+                    <div class="form-group">
+                    <select name="field" class="form-control input-lg" id="sel1" onchange="changeCol(this)" ng-model="register.regData.field">
+                        <option value="" disabled selected hidden>Select Career Option</option>
+                        <option value="Artificial Intelligence">Artificial Intelligence</option>
+                        <option value="Computer Graphics">Computer Graphics</option>
+                        <option value="Computer Networks">Computer Networks</option>
+                        <option value="Comm Bio">Comm Bio</option>
+                        <option value="Human Computer Interaction">Human Computer Interaction</option>
+                        <option value="Operating Systems">Operating Systems</option>
+                        <option value="Algorithms">Algorithms</option>
+                        <option value="Software Engineering">Software Engineering</option>
+                    </select>
+                </div>
                     <input type="text" name="roomno" value="" required autocomplete="off"
-                           class="form-control input-lg" placeholder="Write New Post" />
+                           class="form-control input-lg" placeholder="Write Post" />
                     <br />
                     <button class="btn btn-lg btn-primary btn-block" type="submit">Post</button>
 
