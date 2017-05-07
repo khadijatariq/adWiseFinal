@@ -13,7 +13,7 @@ var StudentSchema = new Schema({
   	fname: {type: String, required: true},
   	lname: {type: String, required: true},
   	gender: {type: String, required: true, lowercase: true},
-  	field: {type: String, required: true, lowercase: true},
+  	field: {type: String, required: true},
   	cgpa: {type: Number, required: true},
   	scgpa: {type: Number, required: true}
 });
@@ -23,7 +23,7 @@ var InstructorSchema = new Schema({
   	fname: {type: String, required: true},
   	lname: {type: String, required: true},
   	gender: {type: String, required: true, lowercase: true},
-  	field: {type: String, required: true, lowercase: true},
+  	field: {type: String, required: true},
   	room: {type: String, required: true},
   	ext: {type: String, required: true}
 });
