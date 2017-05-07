@@ -1,20 +1,20 @@
-1. http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+100-Computational+Problem+Solving-Shafay+Shamail.pdf  Computational Problem Solving  Shafay Shumail 
-2.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+202-EE202-Data+Structures-Ihsan+Ayyub+Qazi.pdf          Data Structures     Ihsan Ayub Qazi 
+1. http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+100-Computational+Problem+Solving-Shafay+Shamail.pdf    Shafay Shumail 
+2.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+202-EE202-Data+Structures-Ihsan+Ayyub+Qazi.pdf               Ihsan Ayub Qazi 
 
-3.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+300-Advanced+Programming-Junaid+Haroon+Siddiqui.pdf		Advanced Programming      Junaid Haroon Siddiqui  
-4.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+315-Theory+of+Automata-Muhammad+Hamad+Alizai.pdf			Theory of Automata         Hamad Alizai 
-5.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+331-Introduction+Artificial+Intelligence-Yasir+Mehmood.pdf    Introduction Artificial Intelligence   Yasir Mehmood   
-6.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+360-Software+Engineering-Suleman+Shahid.pdf     Software Engineering        Suleman Shahid  
-7.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+382-Network-Centric+Computing-Muhammad+Fareed+Zaffar.pdf        Network Centric Computing     Fareed Zafar  
-8.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+432-Intro+to+Data+Mining-Asim+Karim.pdf						Introduction to Data Mining   Asim Karim    
-9.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+436-CS+5310-ComputerVision-Murtaza+Taj.pdf	 Computer Vision        Murtaza Taj     
-10.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+473-CS+5714-EE+483-Network+Security-Muhammad+Fareed+Zaffar.pdf    Network Security Fareed Zafar  
-11.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+5014-Applied+Statistics-Arif+Zaman.pdf				Applied Statistics Arif Zaman   
-12.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+510-Design+and+Analysis+of+Algorithms-Imdad+Ullah+Khan.pdf   Design and Analysis of  Algorithms   Imdadullah Khan    
-13.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+524-High+Performance+Computing-Humaira+Kamal.pdf            High Performance Computing    Humaira Kamal      
-14.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+5312-Big+Data+Analytics-Imdadullah+Khan.pdf                 Big Data Analytics Imdadullah Khan     
-15.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+536-Data+Mining-Asim+Karim.pdf								Data Mining	     Asim Karim    
-16.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+5614-Software+Project+Management-Hamid+Abdul+Basit.pdf      Software Project Management    Abdul Basit   
+3.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+300-Advanced+Programming-Junaid+Haroon+Siddiqui.pdf		     Junaid Haroon Siddiqui  
+4.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+315-Theory+of+Automata-Muhammad+Hamad+Alizai.pdf			         Hamad Alizai 
+5.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+331-Introduction+Artificial+Intelligence-Yasir+Mehmood.pdf      Yasir Mehmood   
+6.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+360-Software+Engineering-Suleman+Shahid.pdf             Suleman Shahid  
+7.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+382-Network-Centric+Computing-Muhammad+Fareed+Zaffar.pdf             Fareed Zafar  
+8.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+432-Intro+to+Data+Mining-Asim+Karim.pdf						  Asim Karim    
+9.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+436-CS+5310-ComputerVision-Murtaza+Taj.pdf	        Murtaza Taj     
+10.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+473-CS+5714-EE+483-Network+Security-Muhammad+Fareed+Zaffar.pdf     Fareed Zafar  
+11.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+5014-Applied+Statistics-Arif+Zaman.pdf				Arif Zaman   
+12.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+510-Design+and+Analysis+of+Algorithms-Imdad+Ullah+Khan.pdf      Imdadullah Khan    
+13.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+524-High+Performance+Computing-Humaira+Kamal.pdf              Humaira Kamal      
+14.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+5312-Big+Data+Analytics-Imdadullah+Khan.pdf                Imdadullah Khan     
+15.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+536-Data+Mining-Asim+Karim.pdf									     Asim Karim    
+16.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+5614-Software+Project+Management-Hamid+Abdul+Basit.pdf         Abdul Basit   
 17.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+567-Software+Reuse-Hamid+Abdul+Basit.pdf					Software Reuse   Abdul Basit       
 18.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+570-Advanced+Operating+Systems-Muhammad+Hammad+Alizai.pdf   Advanced Operating Systems  Hammad Alizai 
 19.http://suraj.lums.edu.pk/~ro/?go=download&path=%2F2016-2017%2FSpring+2016-17&file=CS+585-Service+Oriented+Computing-Basit+Shafiq.pdf				Service Oriented Computing   Basit Shafiq   

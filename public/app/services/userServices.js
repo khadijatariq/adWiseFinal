@@ -107,7 +107,7 @@ angular.module('userServices',[])
 
 	userFactory.getAllCourses = function() {
 		catalogs = ["CS100","CS202","CS300","CS315","CS331","CS360","CS382","CS432","CS436","CS473","CS5014","CS510","CS524","CS5312","CS536","CS5614","CS567","CS570","CS585","CS6310","CS636","CS664","CS666","CS220"];
-		titles = [];
+		titles = ["Computational Problem Solving","Data Structures","Advanced Programming ","Theory of Automata"," Introduction Artificial Intelligence","Software Engineering","Network Centric Computing","Introduction to Data Mining"," Computer Vision","Network Security","Applied Statistics ","Design and Analysis of  Algorithms"," High Performance Computing","  Big Data Analytics","Data Mining","Software Project Management "];
 		iname = [];
 		hrefs = [];
 		return -1;
