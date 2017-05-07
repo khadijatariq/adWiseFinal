@@ -32,9 +32,6 @@
                         <option value="Operating Systems">Operating Systems</option>
                         <option value="Algorithms">Algorithms</option>
                         <option value="Software Engineering">Software Engineering</option>
-
-                        <option value="Not decided yet!">Not decided yet!</option>
-
                     </select>
                 </div>
                 <input type="password" name="password" required autocomplete="off" class="form-control input-lg" placeholder="Password" ng-model="register.regData.password"/>
@@ -49,28 +46,8 @@
                     <br/>
                     <input type="file"required autocomplete="off" fileread="register.regData.fileinfo">
                 </div>
-                <div class="field-wrap">
-                    <label>
-                        Upload Class Schedule
-                      <div class="help-tip">
-                            <p>1. Log in to <a href="https://zambeel.lums.edu.pk/" target="_blank">Zambeel</a>. <br/> 2. Go to Self Service > Degree Progress/Graduation > My Academic Requirements > view report as pdf</p>
-                        </div>
-                    </label>
-                    <br/>
-                    <input type="file"required autocomplete="off" fileread="register.regData.fileinfo">
-                </div>
                 <br/>
-                <div class="field-wrap">
-                    <label >
-                        Upload Class Schedule
-                        <div class="help-tip" >
-                            <p>1. Log in to <a href="https://zambeel.lums.edu.pk/" target="_blank">Zambeel</a>. <br/> 2. Go to Self Service > Degree Progress/Graduation > My Academic Requirements > view report as pdf</p>
-                        </div>
-                    </label>
-                    <br/>
-                    <input type="file"required autocomplete="off" fileread="register.regData.fileinfo2">
-
-                <br/>
+              
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Create my account</button>
                 <br/>
                 <div class="row show-hide-message" ng-show="register.successMsg">

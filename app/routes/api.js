@@ -133,5 +133,9 @@ module.exports = function(router) {
 		res.send(req.decoded);
 	});
 
+	router.post('/hello', function(req, res){
+		console.log("sjhajshfkj");
+	});
+
 	return router;
 }

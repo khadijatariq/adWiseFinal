@@ -46,6 +46,9 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							})
 							limit = 5;
 							app.courses = list.slice(0,limit);
+							User.getAllCourses().then(function(c) {
+								console.log(c);
+							});
 						});
 					} else if ($location.path() == '/sahistory') {
 						Student.getCourses({email: app.email}).then(function(c) {
