@@ -105,5 +105,13 @@ angular.module('userServices',[])
 		return result;
 	};
 
+	userFactory.getAllCourses = function() {
+		catalogs = [];
+		titles = [];
+		iname = [];
+		hrefs = [];
+		return -1;
+	};
+
 	return userFactory;
 });
