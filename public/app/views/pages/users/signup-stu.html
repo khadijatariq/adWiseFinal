@@ -27,17 +27,29 @@
                         <option value="Artificial Intelligence">Artificial Intelligence</option>
                         <option value="Computer Graphics">Computer Graphics</option>
                         <option value="Computer Networks">Computer Networks</option>
+                        <option value="Comm Bio">Comm Bio</option>
                         <option value="Human Computer Interaction">Human Computer Interaction</option>
                         <option value="Operating Systems">Operating Systems</option>
+                        <option value="Algorithms">Algorithms</option>
                         <option value="Software Engineering">Software Engineering</option>
-                        <option value="Not decided yet!">Not decided yet!</option>
                     </select>
                 </div>
                 <input type="password" name="password" required autocomplete="off" class="form-control input-lg" placeholder="Password" ng-model="register.regData.password"/>
                 <input type="password" name="confirm_password" required autocomplete="off" class="form-control input-lg" placeholder="Confirm Password" ng-model="register.regData.passcheck"/>
                 <div class="field-wrap">
-                    <label>
+                    <label >
                         Upload Zambeel Report
+                        <div class="help-tip" >
+                            <p>1. Log in to <a href="https://zambeel.lums.edu.pk/" target="_blank">Zambeel</a>. <br/> 2. Go to Self Service > Degree Progress/Graduation > My Academic Requirements > view report as pdf</p>
+                        </div>
+                    </label>
+                    <br/>
+                    <input type="file"required autocomplete="off" fileread="register.regData.fileinfo">
+                </div>
+                <br/>
+                <div class="field-wrap">
+                    <label>
+                        Upload Class Schedule
                         <div class="help-tip">
                             <p>1. Log in to <a href="https://zambeel.lums.edu.pk/" target="_blank">Zambeel</a>. <br/> 2. Go to Self Service > Degree Progress/Graduation > My Academic Requirements > view report as pdf</p>
                         </div>
@@ -45,6 +57,17 @@
                     <br/>
                     <input type="file"required autocomplete="off" fileread="register.regData.fileinfo">
                 </div>
+                <br/>
+                <div class="field-wrap">
+                    <label >
+                        Upload Class Schedule
+                        <div class="help-tip" >
+                            <p>1. Log in to <a href="https://zambeel.lums.edu.pk/" target="_blank">Zambeel</a>. <br/> 2. Go to Self Service > Degree Progress/Graduation > My Academic Requirements > view report as pdf</p>
+                        </div>
+                    </label>
+                    <br/>
+                    <input type="file"required autocomplete="off" fileread="register.regData.fileinfo">
+
                 <br/>
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Create my account</button>
                 <br/>

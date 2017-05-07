@@ -45,5 +45,65 @@ angular.module('userServices',[])
 		return gpa.toFixed(3);
 	};
 
+	userFactory.getCreds = function (course) {
+		total = 0;
+		course.forEach(function(x) {
+				total = total + x[5];
+		})
+		return total;
+	};
+
+	userFactory.getMcreds = function (course) {
+		total = 0;
+		course.forEach(function(x) {
+			if (x[1] == "CS" && x[2] != 497)
+				total = total + x[5];
+		})
+		return total;
+	};
+
+	userFactory.getTypeInfo = function (course) {
+		dict = {};
+		course.forEach(function(c) {
+			if (!(c[6] in dict)) {
+				dict[c[6]] = c[5];
+			} else {
+				dict[c[6]] = dict[c[6]] + c[5];
+			}
+		});
+		types = ["University Core","Out Group","SSE Core","SSE Elective","Major Core","Major Elective","Free Elective"];
+		used = [];
+		types.forEach(function(x) {
+			if (!(x in dict)) {
+				dict[x] = 0;
+			}
+			used.push(dict[x]);
+		});
+		required = [8,9,34,3,49,9];
+		needed = [];
+		for (var i = 0; i < required.length; i++) {
+			x = required[i]-used[i];
+			if (x < 0){
+				needed.push(0);
+			} else {
+				needed.push(x);
+			}
+		}
+		result = [];
+		for (var i = 0; i < required.length; i++) {
+			var y = {};
+			y.cType = types[i];
+			y.required = required[i];
+			y.needed = needed[i];
+			y.used = used[i];
+			result.push(y);
+		}
+		var z = {};
+		z.cType = types[types.length-1];
+		z.used = used[used.length-1];
+		result.push(z);
+		return result;
+	};
+
 	return userFactory;
 });

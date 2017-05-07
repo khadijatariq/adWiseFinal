@@ -43,17 +43,37 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <td>83</td>
-                            <td>3.3</td>
-                            <td>40</td>
-                            <td>3.5</td>
+                            <td>{{ main.creds }}</td>
+                            <td>{{ main.cgpa }}</td>
+                            <td>{{ main.mcreds }}</td>
+                            <td>{{ main.scgpa }}</td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
 
+                <h2 class="sub-header" style="color:#79be1f">Breakdown</h2>
 
-
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Course Type</th>
+                            <th>Credits Required</th>
+                            <th>Credits Used</th>
+                            <th>Credits Needed</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="course in main.typeinfo">
+                            <td>{{ course.cType }}</td>
+                            <td>{{ course.required }}</td>
+                            <td>{{ course.used }}</td>
+                            <td>{{ course.needed }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
                 <h2 class="sub-header" style="color:#79be1f">Weekly Schedule</h2>
