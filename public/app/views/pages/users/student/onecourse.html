@@ -52,6 +52,15 @@
                 <br />
                 <h2 class="sub-header"  style="color:#79be1f"><img src="assets/images/career.png" style="max-width:35px;margin-right: 10px;
                     margin-bottom: 6px;">Reviews</h2>
+                <br />
+                <div class="row placeholders" ng-repeat="post in main.myPosts">
+
+                    <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
+                        <h3>{{ post.course }}</h3>
+                        <h4>{{ post.field }}</h4>
+                        <h5>{{ post.text }}</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
