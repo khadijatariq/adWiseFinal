@@ -157,6 +157,35 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 		});
 	};
 
+	app.chooseInst = function(name) {
+		app.instname = name;
+		User.getInstInfo(name).then( function (data) {
+			if (data.data.info == null) {
+				app.instfield = "-";
+				app.instemail = "-";
+				app.instroom = "-";
+				app.instext = "-";
+			} else {
+				app.instfield = data.data.info.field;
+				app.instemail = data.data.info.email;
+				app.instroom = data.data.info.room;
+				app.instext = data.data.info.ext;
+			}
+			User.getMyCourses(name).then( function (data) {
+				app.instcourses = data.data.courses;
+				User.getMyPosts(name).then(function(c) {
+					app.instposts = c.data.posts;
+					app.instposts.reverse();
+					User.getMyInstReviews(name).then( function (data) {
+						app.instreviews = data.data.reviews;
+						app.instreviews.reverse();
+						$location.path("/sinsinfo");
+					});
+				});
+			});
+		});
+	};
+
 	app.logout = function() {
 		Auth.logout();
 		$location.path("/");

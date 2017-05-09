@@ -122,7 +122,7 @@ module.exports = function(router) {
 		    course.instructor = c.iname;
 		    course.outline = c.outline;
 		    course.field = "Networks";
-		    course.prereq = "CS200";
+		    course.prereq = c.prereq;
 			course.save();
 		});
 		res.json({success: true, message: 'Data received.'});
@@ -234,6 +234,26 @@ module.exports = function(router) {
 				res.json({success: false, posts: []});
 			} else {
 				res.json({success: true, posts: c});
+			}
+		});
+	});
+
+	router.post('/getinstinfo', function(req, res){
+		schemas.Instructor.findOne({fname : req.body.fname, lname : req.body.lname}).select('email room field ext').exec(function(err,c){
+			if (err){
+				res.json({success: false, info: []});
+			} else {
+				res.json({success: true, info: c});
+			}
+		});
+	});
+
+	router.post('/getinstreviews', function(req, res){
+		schemas.InstructorReview.find({instructor : req.body.name}).select('text name instructor').exec(function(err,c){
+			if (err){
+				res.json({success: false, reviews: []});
+			} else {
+				res.json({success: true, reviews: c});
 			}
 		});
 	});
