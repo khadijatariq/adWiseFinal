@@ -174,5 +174,13 @@ angular.module('userServices',[])
 		return $http.post('/api/getinstreviews', {name: name});
 	}
 
+	userFactory.getCourseInfo = function(code) {
+		return $http.post('/api/getcourseinfo', {code : code});
+	}
+
+	userFactory.getMyCourseReviews = function(code) {
+		return $http.post('/api/getcoursereviews', {code : code});
+	}
+
 	return userFactory;
 });
