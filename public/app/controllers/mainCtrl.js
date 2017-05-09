@@ -97,6 +97,9 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 						app.allCourses = c.slice(0,6);
 						User.getMyCourses().then(function(c) {
 							app.myCourses = c.data.courses.slice(0,3);
+							User.getMyInstReviews(app.fname + ' ' + app.lname).then(function(c) {
+								app.insrev = c.data.reviews;
+							});
 						});
 					} else if ($location.path() == '/icourses'){
 						User.getAllCourses().then(function(c) {
@@ -131,10 +134,9 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 								app.courserev = []
 								c.data.courses.forEach(function(x) {
 									User.getMyCourseReviews(x.catalog).then(function(d) {
-										app.courserev.push(d);
+										app.courserev = app.courserev.concat(d.data.reviews);
 									});
 								});
-								console.log(app.courserev);
 							});
 						});
 					}
