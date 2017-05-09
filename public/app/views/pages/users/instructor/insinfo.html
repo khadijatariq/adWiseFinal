@@ -29,12 +29,11 @@
 
                 <div class="col-xs-6 col-sm-6 placeholder">
                     <br />
-                    <h4 style="color:#3DB1C8; display:inline">First Name: </h4> <h4 style="text-align:left; display:inline-block;">{{main.fname}}</h4> </br>
-                    <h4 style="color:#3DB1C8; display:inline">Last Name: </h4> <h4 style="text-align:left; display:inline-block;">{{main.lname}}</h4> </br>
-                    <h4 style="color:#3DB1C8; display:inline">Field of Research: </h4> <h4 style="text-align:left; display:inline-block;">{{main.field}}</h4> </br>
-                    <h4 style="color:#3DB1C8; display:inline">Email: </h4> <h4 style="text-align:left; display:inline-block;">{{main.email}}</h4> </br>
-                    <h4 style="color:#3DB1C8; display:inline">Room Number: </h4> <h4 style="text-align:left; display:inline-block;">{{main.room}}</h4> </br>
-                    <h4 style="color:#3DB1C8; display:inline">Extension: </h4> <h4 style="text-align:left; display:inline-block;">{{main.ext}}</h4>
+                    <h4 style="color:#3DB1C8; display:inline">Name: </h4> <h4 style="text-align:left; display:inline-block;">{{main.instname}}</h4> </br>
+                    <h4 style="color:#3DB1C8; display:inline">Field of Research: </h4> <h4 style="text-align:left; display:inline-block;">{{main.instfield}}</h4> </br>
+                    <h4 style="color:#3DB1C8; display:inline">Email: </h4> <h4 style="text-align:left; display:inline-block;">{{main.instemail}}</h4> </br>
+                    <h4 style="color:#3DB1C8; display:inline">Room Number: </h4> <h4 style="text-align:left; display:inline-block;">{{main.instroom}}</h4> </br>
+                    <h4 style="color:#3DB1C8; display:inline">Extension: </h4> <h4 style="text-align:left; display:inline-block;">{{main.instext}}</h4>
                     
                 </div>
             </div>
@@ -52,7 +51,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="course in main.allCourses">
+                        <tr ng-repeat="course in main.instcourses">
                             <td>{{ course.catalog }}</td>
                             <td>{{ course.courseTitle }}</td>
                             <td>{{ course.instructor }}</td>
@@ -65,57 +64,23 @@
             <div class="row">
                 <h2 class="sub-header" style="color:#79be1f">Posts</h2>
                 <br />
-                <div class="row placeholders">
 
+                <div class="row placeholders" ng-repeat="post in main.instposts">
                     <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
-                        <h4>Dr. Zartash</h4>
-                        <p>found this cool article.</p>
-                        <p style="color:#1f94f4">coolgraphics/article1.com</p>
-                    </div>
-                </div>
-                <div class="row placeholders">
-                    <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
-                        <h4>Dr. Zartash</h4>
-                        <p>found this cool article.</p>
-                        <p style="color:#1f94f4">coolgraphics/article1.com</p>
-                    </div>
-                </div>
-                <div class="row placeholders">
-
-                    <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
-                        <h4>Dr. Zartash</h4>
-                        <p>found this cool article.</p>
-                        <p style="color:#1f94f4">coolgraphics/article1.com</p>
+                        <h3>{{ post.instructor }}</h3>
+                        <h4>{{ post.field }}</h4>
+                        <h5>{{ post.text }}</h5>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <h2 class="sub-header" style="color:#79be1f">Reviews</h2>
                 <br />
-
-                <div class="row placeholders">
-
+                <div class="row placeholders" ng-repeat="post in main.instreviews">
                     <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
-                        <h4>Anonymous</h4>
-                        <p>Dr. Shafay Shamail was a great instructor.</p>
-                    </div>
-                </div>
-                <div class="row placeholders">
-                    <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
-                        <h4>Anonymous</h4>
-                        <p>Dr. Shafay Shamail was a great instructor.</p>
-                    </div>
-                </div>
-                <div class="row placeholders">
-                    <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
-                        <h4>Anonymous</h4>
-                        <p>Dr. Shafay Shamail was a great instructor.</p>
-                    </div>
-                </div>
-                <div class="row placeholders">
-                    <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
-                        <h4>Anonymous</h4>
-                        <p>Dr. Shafay Shamail was a great instructor.</p>
+                        <h3>{{ post.name }}</h3>
+                        <h4>{{ post.instructor }}</h4>
+                        <h5>{{ post.text }}</h5>
                     </div>
                 </div>
             </div>

@@ -159,6 +159,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 
 	app.chooseInst = function(name) {
 		app.instname = name;
+		console.log(name);
 		User.getInstInfo(name).then( function (data) {
 			if (data.data.info == null) {
 				app.instfield = "-";
@@ -179,7 +180,11 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 					User.getMyInstReviews(name).then( function (data) {
 						app.instreviews = data.data.reviews;
 						app.instreviews.reverse();
-						$location.path("/sinsinfo");
+						if (app.state == "student")
+							$location.path("/sinsinfo");
+						else 
+							$location.path("/iinsinfo");
+
 					});
 				});
 			});
