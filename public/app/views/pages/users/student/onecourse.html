@@ -2,14 +2,16 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar" style="background-color:#eeeeee">
             <ul class="nav nav-sidebar">
-                <li><a href="/idashboard">Home</a></li>
-                <li><a href="/ioldposts">Old Posts</a></li>
+                <li><a href="/sdashboard">Home</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="/imycourses">My Courses</a></li>
-                <li><a href="/ievals">View Evaluations & Reviews</a></li>
-                <li class="active"><a href="#">All Courses<span class="sr-only">(current)</span></a></li>
-                <li><a href="/iinstructors">All Instructors </a></li>
+                <li><a href="/scareers">Career Paths</a></li>
+                <li><a href="/sahistory">Academic History</a></li>
+                <li class="active"><a href="/scourses">All Courses<span class="sr-only">(current)</span></a></li>
+                <li><a href="/sinstructors">All Instructors</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="/enrollment">Enrollment</a></li>
             </ul>
         </div>
 
@@ -17,11 +19,13 @@
             <br />
             <div>
                 <h1 class="page-header" style="color:#3DB1C8; text-align:center;"><img src="assets/images/book2.png" style="max-width:45px;margin-right: 10px;
-                margin-bottom: 6px;">All Courses</h1>
+                margin-bottom: 6px;">{{ course.courseTitle }}</h1>
             </div>
             <div class="col-md-12 main" style="background-color:rgba(255,255,255,0.5)">
                 <br />
-                <a href="http://suraj.lums.edu.pk/~ro" style="font-weight:bold;">SURAJ</a>
+                <br />
+
+                <a href="http://suraj.lums.edu.pk/" style="font-weight:bold;">SURAJ</a>
                 <br />
                 <br />
                 <div class="table-responsive">
@@ -35,16 +39,28 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="course in main.allCourses">
+                        <tr>
                             <td>{{ course.catalog }}</td>
-                            <td>{{ course.courseTitle }}</td>
+                            <td>{{ course.courseTitle }}</a></td>
                             <td>{{ course.instructor }}</td>
                             <td><a ng-href="{{ course.outline }}" target="_blank">Download</a></td>
                         </tr>
+
                         </tbody>
                     </table>
                 </div>
+                <br />
+                <h2 class="sub-header"  style="color:#79be1f"><img src="assets/images/career.png" style="max-width:35px;margin-right: 10px;
+                    margin-bottom: 6px;">Reviews</h2>
+                <br />
+                <div class="row placeholders" ng-repeat="post in main.myPosts">
 
+                    <div class="col-xs-6 col-sm-12 placeholder" style="background-color:white">
+                        <h3>{{ post.course }}</h3>
+                        <h4>{{ post.field }}</h4>
+                        <h5>{{ post.text }}</h5>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

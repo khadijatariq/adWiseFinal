@@ -60,13 +60,14 @@
                         <tbody>
                         <tr ng-repeat="course in main.allCourses">
                             <td>{{ course.catalog }}</td>
-                            <td>{{ course.courseTitle }}</td>
+                            <td><a href="/sonecourse">{{ course.courseTitle }}</a></td>
                             <td>{{ course.instructor }}</td>
                             <td><a ng-href="{{ course.outline }}" target="_blank">Download</a></td>
                         </tr>
                         </tbody>
                     </table>
                 </div>
+                
             </div>
         </div>
     </div>

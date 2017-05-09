@@ -87,6 +87,11 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/profile.html'
 	})
 
+	.when('/sonecourse', {
+		title : 'ONE COURSE',
+		templateUrl: 'app/views/pages/users/student/onecourse.html'
+	})
+
 	.when('/scareerinfo', {
 		title : 'CAREERINFO',
 		templateUrl: 'app/views/pages/users/student/careerinfo.html'
@@ -95,6 +100,11 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 	.when('/iprofile', {
 		title : 'PROFILE',
 		templateUrl: 'app/views/pages/users/instructor/profile.html'
+	})
+
+	.when('/ievals', {
+		title : 'EVALUATIONS',
+		templateUrl: 'app/views/pages/users/instructor/evaluations.html'
 	})
 
 	.when('/isettings', {
