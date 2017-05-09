@@ -24,8 +24,8 @@
 
         <div class="row placeholders" ng-repeat="four in main.allInstructors">
             <div class="col-xs-6 col-sm-3 placeholder" ng-repeat="ins in four">
-                <a href="/iinsinfo"><img src="assets/images/i3.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail"></a>
-                <h4>{{ins}}</h4>
+                <a href="#"><img src="assets/images/i3.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail" ng-click=main.chooseInst(ins)></a>
+                <a><h4 ng-click=main.chooseInst(ins)>{{ins}}</h4></a>
                 <span class="text-muted">Associate Professor - CS</span>
             </div>
         </div>

@@ -124,6 +124,19 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 							app.myPosts = c.data.posts;
 							app.myPosts.reverse();
 						});
+					} else if ($location.path() == '/ievals'){
+						User.getMyInstReviews(app.fname + ' ' + app.lname).then(function(c) {
+							app.insrev = c.data.reviews;
+							User.getMyCourses(app.fname + ' ' + app.lname).then(function(c) {
+								app.courserev = []
+								c.data.courses.forEach(function(x) {
+									User.getMyCourseReviews(x.catalog).then(function(d) {
+										app.courserev.push(d);
+									});
+								});
+								console.log(app.courserev);
+							});
+						});
 					}
 				}
 			})
@@ -159,7 +172,6 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 
 	app.chooseInst = function(name) {
 		app.instname = name;
-		console.log(name);
 		User.getInstInfo(name).then( function (data) {
 			if (data.data.info == null) {
 				app.instfield = "-";
@@ -187,26 +199,6 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 
 					});
 				});
-			});
-		});
-	};
-
-	app.chooseCourse = function(code) {
-		app.coursecode = code;
-		User.getCourseInfo(code).then( function (data) {
-			if (data.data.info == null) {
-				app.coursetitle = "-";
-				app.courseoutline = "-";
-				app.courseinst = "-";
-			} else {
-				app.coursetitle = data.data.info.courseTitle;
-				app.courseoutline = data.data.info.outline;
-				app.courseinst = data.data.info.instructor;
-			}
-			User.getMyCourseReviews(code).then( function (data) {
-				app.coursereviews = data.data.reviews;
-				app.coursereviews.reverse();
-				$location.path("/scourseinfo");
 			});
 		});
 	};
