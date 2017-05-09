@@ -184,5 +184,9 @@ angular.module('userServices',[])
 		return $http.post('/api/getcoursereviews', {code : code});
 	}
 
+	userFactory.getCareerCourses = function(career) {
+		return $http.post('api/getcareercourses', {name : career});
+	} 
+
 	return userFactory;
 });

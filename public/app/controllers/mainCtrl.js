@@ -86,7 +86,7 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 								app.allInstructors.push(ins.slice(start,ins.length));
 							}
 						});
-					}
+					} 
 				} else {
 					app.student = false;
 					app.instructor = true;
@@ -204,6 +204,33 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 			});
 		});
 	};
+
+	app.chooseCareer = function(name) {
+		app.careername = name;
+		User.getCareerCourses(name).then( function (data) {
+			app.careercourses = data.data.info
+			$location.path("/scareerinfo");
+
+			
+			// User.getMyCourses(name).then( function (data) {
+			// 	app.instcourses = data.data.courses;
+			// 	User.getMyPosts(name).then(function(c) {
+			// 		app.instposts = c.data.posts;
+			// 		app.instposts.reverse();
+			// 		User.getMyInstReviews(name).then( function (data) {
+			// 			app.instreviews = data.data.reviews;
+			// 			app.instreviews.reverse();
+			// 			if (app.state == "student")
+			// 				$location.path("/sinsinfo");
+			// 			else 
+			// 				$location.path("/iinsinfo");
+
+			// 		});
+			// 	});
+			// });
+		});
+	};
+
 
 	app.logout = function() {
 		Auth.logout();

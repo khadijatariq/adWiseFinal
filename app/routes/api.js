@@ -278,6 +278,16 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/getCareerCourses', function(req, res){
+		schemas.AllCourses.find({field : req.body.name}).select('catalog courseTitle instructor outline').exec(function(err,c){
+			if (err){
+				res.json({success: false, info: []});
+			} else {
+				res.json({success: true, info: c});
+			}
+		});
+	});
+
 	router.use( function(req, res, next) {
 		var token = req.body.token || req.body.query || req.headers['x-access-token'];
 		if (token) {
@@ -298,6 +308,7 @@ module.exports = function(router) {
 	router.post('/me', function(req, res){
 		res.send(req.decoded);
 	});
+
 
 	return router;
 }
