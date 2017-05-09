@@ -127,7 +127,7 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/contact.html'
 	})
 
-	.when('/courseinfo', {
+	.when('/scourseinfo', {
 		title : 'COURSEINFO',
 		templateUrl: 'app/views/pages/users/student/courseinfo.html'
 	})

@@ -191,6 +191,26 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 		});
 	};
 
+	app.chooseCourse = function(code) {
+		app.coursecode = code;
+		User.getCourseInfo(code).then( function (data) {
+			if (data.data.info == null) {
+				app.coursetitle = "-";
+				app.courseoutline = "-";
+				app.courseinst = "-";
+			} else {
+				app.coursetitle = data.data.info.courseTitle;
+				app.courseoutline = data.data.info.outline;
+				app.courseinst = data.data.info.instructor;
+			}
+			User.getMyCourseReviews(code).then( function (data) {
+				app.coursereviews = data.data.reviews;
+				app.coursereviews.reverse();
+				$location.path("/scourseinfo");
+			});
+		});
+	};
+
 	app.logout = function() {
 		Auth.logout();
 		$location.path("/");

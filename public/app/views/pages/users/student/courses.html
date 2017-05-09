@@ -59,8 +59,8 @@
                         </thead>
                         <tbody>
                         <tr ng-repeat="course in main.allCourses">
-                            <td>{{ course.catalog }}</td>
-                            <td><a href="/sonecourse">{{ course.courseTitle }}</a></td>
+                            <td><a ng-click=main.chooseCourse(course.catalog)>{{ course.catalog }}</a></td>
+                            <td>{{ course.courseTitle }}</td>
                             <td>{{ course.instructor }}</td>
                             <td><a ng-href="{{ course.outline }}" target="_blank">Download</a></td>
                         </tr>

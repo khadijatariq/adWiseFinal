@@ -258,6 +258,26 @@ module.exports = function(router) {
 		});
 	});
 
+	router.post('/getcourseinfo', function(req, res){
+		schemas.AllCourses.findOne({catalog : req.body.code}).select('courseTitle outline instructor').exec(function(err,c){
+			if (err){
+				res.json({success: false, info: []});
+			} else {
+				res.json({success: true, info: c});
+			}
+		});
+	});
+
+	router.post('/getcoursereviews', function(req, res){
+		schemas.CourseReview.find({course : req.body.code}).select('course name text').exec(function(err,c){
+			if (err){
+				res.json({success: false, reviews: []});
+			} else {
+				res.json({success: true, reviews: c});
+			}
+		});
+	});
+
 	router.use( function(req, res, next) {
 		var token = req.body.token || req.body.query || req.headers['x-access-token'];
 		if (token) {
