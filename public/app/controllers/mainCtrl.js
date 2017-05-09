@@ -97,6 +97,9 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 						app.allCourses = c.slice(0,6);
 						User.getMyCourses().then(function(c) {
 							app.myCourses = c.data.courses.slice(0,3);
+							User.getMyInstReviews(app.fname + ' ' + app.lname).then(function(c) {
+								app.insrev = c.data.reviews;
+							});
 						});
 					} else if ($location.path() == '/icourses'){
 						User.getAllCourses().then(function(c) {
@@ -123,6 +126,18 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 						User.getMyPosts(app.fname + ' ' + app.lname).then(function(c) {
 							app.myPosts = c.data.posts;
 							app.myPosts.reverse();
+						});
+					} else if ($location.path() == '/ievals'){
+						User.getMyInstReviews(app.fname + ' ' + app.lname).then(function(c) {
+							app.insrev = c.data.reviews;
+							User.getMyCourses(app.fname + ' ' + app.lname).then(function(c) {
+								app.courserev = []
+								c.data.courses.forEach(function(x) {
+									User.getMyCourseReviews(x.catalog).then(function(d) {
+										app.courserev = app.courserev.concat(d.data.reviews);
+									});
+								});
+							});
 						});
 					}
 				}
@@ -154,6 +169,39 @@ angular.module('mainControllers', ['authServices','stuServices','userServices'])
 			} else {
 				app.errorMsg = data.data.message;
 			}
+		});
+	};
+
+	app.chooseInst = function(name) {
+		app.instname = name;
+		User.getInstInfo(name).then( function (data) {
+			if (data.data.info == null) {
+				app.instfield = "-";
+				app.instemail = "-";
+				app.instroom = "-";
+				app.instext = "-";
+			} else {
+				app.instfield = data.data.info.field;
+				app.instemail = data.data.info.email;
+				app.instroom = data.data.info.room;
+				app.instext = data.data.info.ext;
+			}
+			User.getMyCourses(name).then( function (data) {
+				app.instcourses = data.data.courses;
+				User.getMyPosts(name).then(function(c) {
+					app.instposts = c.data.posts;
+					app.instposts.reverse();
+					User.getMyInstReviews(name).then( function (data) {
+						app.instreviews = data.data.reviews;
+						app.instreviews.reverse();
+						if (app.state == "student")
+							$location.path("/sinsinfo");
+						else 
+							$location.path("/iinsinfo");
+
+					});
+				});
+			});
 		});
 	};
 

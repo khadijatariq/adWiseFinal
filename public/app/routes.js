@@ -127,7 +127,7 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 		templateUrl: 'app/views/pages/users/student/contact.html'
 	})
 
-	.when('/courseinfo', {
+	.when('/scourseinfo', {
 		title : 'COURSEINFO',
 		templateUrl: 'app/views/pages/users/student/courseinfo.html'
 	})
@@ -173,6 +173,11 @@ angular.module('appRoutes', ['ngRoute', 'ngResource'])
 	.when('/iinsinfo', {
 		title : 'INSTRUCTOR INFO',
 		templateUrl: 'app/views/pages/users/instructor/insinfo.html'
+	})
+
+	.when('/sinsinfo', {
+		title : 'INSTRUCTOR INFO',
+		templateUrl: 'app/views/pages/users/student/insinfo.html'
 	})
 
 	.when('/iabout', {
