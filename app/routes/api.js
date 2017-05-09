@@ -121,7 +121,7 @@ module.exports = function(router) {
 			course.courseTitle = c.cTitle;
 		    course.instructor = c.iname;
 		    course.outline = c.outline;
-		    course.field = "Networks";
+		    course.field = c.field;
 		    course.prereq = c.prereq;
 			course.save();
 		});
@@ -279,7 +279,17 @@ module.exports = function(router) {
 	});
 
 	router.post('/getCareerCourses', function(req, res){
-		schemas.AllCourses.find({field : req.body.name}).select('catalog courseTitle instructor outline').exec(function(err,c){
+		schemas.AllCourses.find({field : req.body.name}).select('catalog courseTitle instructor outline prereq').exec(function(err,c){
+			if (err){
+				res.json({success: false, info: []});
+			} else {
+				res.json({success: true, info: c});
+			}
+		});
+	});
+
+	router.post('/getCareerInst', function(req, res){
+		schemas.AllCourses.find({field : req.body.name}).distinct('instructor').exec(function(err,c){
 			if (err){
 				res.json({success: false, info: []});
 			} else {

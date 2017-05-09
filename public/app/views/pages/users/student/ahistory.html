@@ -75,9 +75,28 @@
                 </div>
 
 
-                <h2 class="sub-header" style="color:#79be1f">Weekly Schedule</h2>
-                <img class="img-responsive" style="" src="assets/images/schedule.png" align="middle" />
+                <h2 class="sub-header" style="color:#79be1f">Present Courses</h2>
 
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Term</th>
+                            <th>Course Code</th>
+                            <th>Title</th>
+                            <th>Credits</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="course in main.pcourses">
+                            <td>{{ course.term }}</td>
+                            <td>{{ course.subject }} {{ course.catalog }}</td>
+                            <td>{{ course.courseTitle }}</td>
+                            <td>{{ course.units }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
 
 
                 <h2 class="sub-header" style="color:#79be1f">Past Courses</h2>
