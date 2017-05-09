@@ -27,7 +27,7 @@
         <br />
         <br />
 
-        <h2 class="sub-header" style="color:#79be1f">Computer Networks</h2>
+        <h2 class="sub-header" style="color:#79be1f">{{main.careername}}</h2>
 
         <br />
         <br />
@@ -44,26 +44,26 @@
 
         <h2 class="sub-header" style="color:#79be1f">Courses in this Field</h2>
 
-        <div class="table-responsive">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Total Credits</th>
-                    <th>CGPA</th>
-                    <th>Major Credits</th>
-                    <th>SCGPA</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ main.creds }}</td>
-                    <td>{{ main.cgpa }}</td>
-                    <td>{{ main.mcreds }}</td>
-                    <td>{{ main.scgpa }}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
+         <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Name</th>
+                            <th>Instructor</th>
+                            <th>Outline</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="course in main.careercourses">
+                            <td><a ng-click=main.chooseCourse(course.catalog)>{{ course.catalog }}</a></td>
+                            <td>{{ course.courseTitle }}</td>
+                            <td>{{ course.instructor }}</td>
+                            <td><a ng-href="{{ course.outline }}" target="_blank">Download</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
     </div>
 </div>
 
